@@ -29,6 +29,7 @@
     font-family: 'Segoe UI', sans-serif;
     font-size: 35px;
     font-weight: 500;
+    color: rgb(68, 67, 67);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
