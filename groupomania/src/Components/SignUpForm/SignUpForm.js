@@ -1,36 +1,35 @@
 import React, { useState } from 'react';
-import './LoginForm.css'
+import './SignUpForm.css'
+// import { BrowserRouter as Link}  from "react-router-dom";
 import Axios from 'axios'
 
 
-const LoginForm = () => {
+const SignUpForm = () => {
 
-    const [usernameLog, setUsernameLog] = useState('')
-    const [passwordLog, setPasswordLog] = useState('')
+    const [usernameReg, setUsernameReg] = useState('')
+    const [passwordReg, setPasswordReg] = useState('')
 
     const register = () => {
-        Axios.post(
-            'http://localhost:8080/api/auth/login', { email: usernameLog, password: passwordLog })
+        Axios.post('http://localhost:8080/api/auth/signup', { email: usernameReg, password: passwordReg })
             .then((response) => {
                 console.log(response);
             })
     }
-
 
     return (
 
         <>
 
             <form className='container-form'>
-                <h1 className='title-login'>Sign In</h1>
+                <h1 className='title-login'>Sign Up</h1>
                 <input
-                    onChange={(e) => { setUsernameLog(e.target.value) }}
+                    onChange={(e) => { setUsernameReg(e.target.value) }}
                     type="text"
                     id='title'
                     placeholder='email'
                     className='inp-title' />
                 <input
-                    onChange={(e) => { setPasswordLog(e.target.value) }}
+                    onChange={(e) => { setPasswordReg(e.target.value) }}
                     type="password"
                     id='title'
                     placeholder='password'
@@ -39,9 +38,10 @@ const LoginForm = () => {
                 <button
                     onClick={register}
                     className='log-btn'>Connect</button>
+
             </form>
         </>
     );
 }
 
-export default LoginForm;
+export default SignUpForm;

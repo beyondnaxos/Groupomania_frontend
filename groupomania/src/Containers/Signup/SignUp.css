@@ -1,0 +1,61 @@
+/* .title-login {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 35px;
+    padding: 10px 15px ;
+    color: rgb(68, 67, 67);
+    position: relative;
+    left: 40%;
+} */
+
+.mainLog {
+    
+    height: 100vh;
+    display: flex;
+    margin-left: 20%;
+    align-items: center;
+}
+
+.imgLog {
+    position: absolute;
+    left: 45%;
+    top: 5%;
+}
+
+.grayLog {
+    position: absolute;
+    z-index: -999;
+    height: 100vh;
+    width: 40%;
+    right: 0;
+    background-color: rgb(37, 37, 37);
+}
+
+.quote {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+
+.quote .upper-quote{
+    font-size: 45px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif ;
+}
+.quote .upper-quote .bold{
+    font-size: 45px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif ;
+}
+.quote .under-quote{
+    font-size: 35px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: rgb(44, 44, 44);
+    font-family: 'Segoe UI', sans-serif ;
+    
+}
