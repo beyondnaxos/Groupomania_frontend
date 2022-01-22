@@ -5,15 +5,16 @@ import Axios from 'axios'
 
 const LoginForm = () => {
 
-    const [usernameLog, setUsernameLog] = useState('')
-    const [passwordLog, setPasswordLog] = useState('')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
-    const register = () => {
+    const login = () => {
         Axios.post(
-            'http://localhost:8080/api/auth/login', { email: usernameLog, password: passwordLog })
+            'http://localhost:8080/api/auth/login', { email: username, password: password })
             .then((response) => {
-                console.log(response);
+                alert('Vous êtes connecté');
             })
+            .catch(error => alert(error))
     }
 
 
@@ -24,20 +25,20 @@ const LoginForm = () => {
             <form className='container-form'>
                 <h1 className='title-login'>Sign In</h1>
                 <input
-                    onChange={(e) => { setUsernameLog(e.target.value) }}
+                    onChange={(e) => { setUsername(e.target.value) }}
                     type="text"
                     id='title'
                     placeholder='email'
                     className='inp-title' />
                 <input
-                    onChange={(e) => { setPasswordLog(e.target.value) }}
+                    onChange={(e) => { setPassword(e.target.value) }}
                     type="password"
                     id='title'
                     placeholder='password'
                     className='inp-title' />
 
                 <button
-                    onClick={register}
+                    onClick={login}
                     className='log-btn'>Connect</button>
             </form>
         </>

@@ -37,7 +37,7 @@ const SignUpForm = () => {
 
                 <button
                     onClick={register}
-                    className='log-btn'>Connect</button>
+                    className='log-btn'>Create</button>
 
             </form>
         </>
