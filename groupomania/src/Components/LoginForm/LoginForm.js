@@ -1,22 +1,25 @@
+
 import React, { useState } from 'react';
 import './LoginForm.css'
 import Axios from 'axios'
 
-
 const LoginForm = () => {
 
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
 
     const login = () => {
         Axios.post(
-            'http://localhost:8080/api/auth/login', { email: username, password: password })
+            'http://localhost:8080/api/auth/login', { email: email, password: password })
             .then((response) => {
-                alert('Vous êtes connecté');
+                console.log(response)
+              
             })
             .catch(error => alert(error))
     }
 
+    // const onSubmit = (e) => e.prevent.default()
 
     return (
 
@@ -25,7 +28,7 @@ const LoginForm = () => {
             <form className='container-form'>
                 <h1 className='title-login'>Sign In</h1>
                 <input
-                    onChange={(e) => { setUsername(e.target.value) }}
+                    onChange={(e) => { setEmail(e.target.value) }}
                     type="text"
                     id='title'
                     placeholder='email'

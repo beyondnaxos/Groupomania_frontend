@@ -6,15 +6,19 @@ import Axios from 'axios'
 
 const SignUpForm = () => {
 
+    const [emailReg, setEmailReg] = useState('')
     const [usernameReg, setUsernameReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
 
     const register = () => {
-        Axios.post('http://localhost:8080/api/auth/signup', { email: usernameReg, password: passwordReg })
+        Axios.post('http://localhost:8080/api/auth/signup', { email : emailReg, username: usernameReg, password: passwordReg })
             .then((response) => {
                 console.log(response);
             })
     }
+
+   
+
 
     return (
 
@@ -23,10 +27,16 @@ const SignUpForm = () => {
             <form className='container-form'>
                 <h1 className='title-login'>Sign Up</h1>
                 <input
-                    onChange={(e) => { setUsernameReg(e.target.value) }}
+                    onChange={(e) => { setEmailReg(e.target.value) }}
                     type="text"
                     id='title'
                     placeholder='email'
+                    className='inp-title' />
+                <input
+                    onChange={(e) => { setUsernameReg(e.target.value) }}
+                    type="text"
+                    id='title'
+                    placeholder='username'
                     className='inp-title' />
                 <input
                     onChange={(e) => { setPasswordReg(e.target.value) }}
