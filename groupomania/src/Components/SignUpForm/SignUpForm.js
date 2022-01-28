@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import './SignUpForm.css'
 // import { BrowserRouter as Link}  from "react-router-dom";
 import Axios from 'axios'
+import {useNavigate} from 'react-router-dom' 
 
-
-const SignUpForm = () => {
+const SignUpForm = (props) => {
 
     const [emailReg, setEmailReg] = useState('')
     const [usernameReg, setUsernameReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
-
-    const register = () => {
-        Axios.post('http://localhost:8080/api/auth/signup', { email : emailReg, username: usernameReg, password: passwordReg })
-            .then((response) => {
-                console.log(response);
-            })
+    let navigate = useNavigate()
+    
+    const register = async (e) => {
+        e.preventDefault();
+        const response = await Axios.post('http://localhost:8080/api/auth/signup', { email : emailReg, username: usernameReg, password: passwordReg })
+        console.log(response);
+        navigate('/login')
     }
 
    
