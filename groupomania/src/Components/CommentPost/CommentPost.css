@@ -1,0 +1,10 @@
+.comment-post {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: dashed ;
+    max-width: 450px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    height: 25px;
+}

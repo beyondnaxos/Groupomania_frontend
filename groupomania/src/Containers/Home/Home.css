@@ -6,8 +6,9 @@
 .container-cards {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
-    width: 100%;
+    width: 770px;
     max-width: 1300px;
     margin: 0 auto 0;
 }
@@ -15,3 +16,4 @@
 body {
     background-color: #F8F8F8;
 }
+
