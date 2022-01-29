@@ -4,10 +4,13 @@ import Home from './Containers/Home/Home'
 import Login from './Containers/Login/Login';
 import SignUp from './Containers/Signup/SignUp';
 import React, {useState} from 'react'
+import {useAuth} from './AuthContext'
 
 
 
 function App() {
+
+  const {loggedIn} = useAuth()
 
   const [user, setUser ] = useState()
 

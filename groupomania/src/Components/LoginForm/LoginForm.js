@@ -5,14 +5,15 @@ import Axios from 'axios'
 import {useNavigate} from 'react-router-dom' 
 
 
-const LoginForm = () => {
 
+
+const LoginForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     let navigate = useNavigate()
+   
 
-
-    const login = async (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         const response = await Axios.post('http://localhost:8080/api/auth/login', { email : email, password: password })
         localStorage.setItem('token', response.data.token)
@@ -42,7 +43,7 @@ const LoginForm = () => {
                     className='inp-title' />
 
                 <button
-                    onClick={login}
+                    onClick={handleLogin}
                     className='log-btn'>Connect</button>
             </form>
         </>
