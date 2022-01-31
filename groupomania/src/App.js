@@ -3,7 +3,7 @@ import { Routes , Route } from 'react-router-dom'
 import Home from './Containers/Home/Home'
 import Login from './Containers/Login/Login';
 import SignUp from './Containers/Signup/SignUp';
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {useAuth} from './AuthContext'
 
 
