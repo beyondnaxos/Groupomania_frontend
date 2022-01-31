@@ -13,11 +13,11 @@ const LoginForm = () => {
 
 
     const login = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const response = await Axios.post('http://localhost:8080/api/auth/login', { email : email, password: password })
         localStorage.setItem('token', response.data.token)
         localStorage.setItem('username', response.data.username)
-        console.log(response);
+        console.log(response)
         navigate('/')
     }
 
