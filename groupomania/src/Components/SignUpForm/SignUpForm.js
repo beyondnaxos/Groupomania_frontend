@@ -14,7 +14,7 @@ const SignUpForm = (props) => {
     const register = async (e) => {
         e.preventDefault();
         const response = await Axios.post('http://localhost:8080/api/auth/signup', { email : emailReg, username: usernameReg, password: passwordReg })
-        console.log(response);
+        
         navigate('/login')
     }
 
