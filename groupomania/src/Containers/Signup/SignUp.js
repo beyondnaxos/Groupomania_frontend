@@ -3,7 +3,7 @@ import './SignUp.css'
 import postLog from './Post.png'
 import SignUpForm from '../../Components/SignUpForm/SignUpForm'
 
-const SignUp = (props) => {
+const SignUp = () => {
     return (
         <>
         <div className='quote'>
@@ -13,7 +13,7 @@ const SignUp = (props) => {
         <img className='imgLog' src={postLog} alt="Logo" />
         <div className='grayLog'></div>
         <div className="mainLog">
-            <SignUpForm signup={props.signup} />
+            <SignUpForm />
         </div>
         </>
     )
