@@ -3,7 +3,7 @@ import './Login.css'
 import LoginForm from '../../Components/LoginForm/LoginForm';
 import postLog from './Post.png'
 
-const Login = () => {
+const Login = (props) => {
     return (
         <>
         <div className='quote'>
@@ -13,7 +13,7 @@ const Login = () => {
         <img className='imgLog' src={postLog} alt="Logo" />
         <div className='grayLog'></div>
         <div className="mainLog">
-            <LoginForm />
+            <LoginForm setUser={props.setUser}/>
         </div>
         </>
     )

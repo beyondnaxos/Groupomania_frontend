@@ -14,9 +14,9 @@ function App() {
 
   return (
     <Routes>
-    <Route path='/login' element={<Login />}/>
-    <Route path='/signup' element={<SignUp signup={setUser}/>}/>
-    <Route path='/' element={<Home />}/>
+    <Route path='/login' element={<Login setUser={setUser}/>}/>
+    <Route path='/signup' element={<SignUp />}/>
+    <Route path='/' element={<Home user={user} />}/>
     </Routes>
   );
 }
