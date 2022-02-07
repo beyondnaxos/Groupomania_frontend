@@ -4,7 +4,7 @@
     margin: 70px 0 0 ;
 }
 
-.container-form {
+.log-container-form {
     padding: 10px;
     min-width: 500px;
     max-width: 500px;
@@ -14,11 +14,11 @@
 }
 
 
-.container-form label {
+.log-container-form label {
     font-size: 20px;
 }
 
-.container-form input {
+.log-container-form input {
     border-color: #ffffff !important;
     border-bottom: solid 4px rgb(68, 67, 67) !important;
     border-left: none !important;
@@ -45,7 +45,7 @@ input:focus, textarea:focus, select:focus{
 
 
 
-.container-form button {
+.log-container-form .log-btn {
     padding: 10px 15px ;
     width: 200px;
     background-color: transparent;
@@ -57,10 +57,29 @@ input:focus, textarea:focus, select:focus{
     font-weight: 500;
     font-size: 25px;
     border: none;
-    margin-left: 57%;
+}
+.log-container-form .log-btn-alt {
+    padding: 10px 15px ;
+    width: 200px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 75px;
+    border-radius: 10px;
+    background-color: #F8F8F8;
+    color: #8561FF;
+    font-weight: 500;
+    font-size: 25px;
+    border: none;
+    margin-right: 80px;
 }
 
 .title-login {
     color: rgb(68, 67, 67);
 
+}
+
+#btns-allign {
+    display: flex;
+    
+    
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SignUpForm.css'
 // import { BrowserRouter as Link}  from "react-router-dom";
 import Axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const SignUpForm = () => {
 
@@ -13,11 +13,14 @@ const SignUpForm = () => {
 
     const register = async (e) => {
         e.preventDefault();
-        const response = await Axios.post('http://localhost:8080/api/auth/signup', { email : emailReg, username: usernameReg, password: passwordReg })
+        const response = await Axios.post('http://localhost:8080/api/auth/signup', { email: emailReg, username: usernameReg, password: passwordReg })
         console.log(response);
         navigate('/login')
     }
 
+    const signup = () => {
+        navigate('/login')
+    }
 
 
 
@@ -45,10 +48,14 @@ const SignUpForm = () => {
                     id='title'
                     placeholder='password'
                     className='inp-title' />
-
-                <button
-                    onClick={register}
-                    className='log-btn'>Create</button>
+                <div id="btns-allign">
+                    <button
+                        onClick={signup}
+                        className='log-btn-alt'>Login</button>
+                    <button
+                        onClick={register}
+                        className='sign-btn'>Create</button>
+                </div>
 
             </form>
         </>

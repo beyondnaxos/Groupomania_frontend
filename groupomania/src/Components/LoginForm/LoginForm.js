@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './LoginForm.css'
 import Axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const LoginForm = (props) => {
@@ -14,7 +14,7 @@ const LoginForm = (props) => {
 
     const login = async (e) => {
         e.preventDefault();
-        const response = await Axios.post('http://localhost:8080/api/auth/login', { email : email, password: password })
+        const response = await Axios.post('http://localhost:8080/api/auth/login', { email: email, password: password })
 
         localStorage.setItem('token', response.data.token)
         localStorage.setItem('username', response.data.username)
@@ -25,12 +25,15 @@ const LoginForm = (props) => {
         navigate('/')
     }
 
+    const signup = () => {
+        navigate('/signup')
+    }
 
     return (
 
         <>
 
-            <form className='container-form'>
+            <form className='log-container-form'>
                 <h1 className='title-login'>Sign In</h1>
                 <input
                     onChange={(e) => { setEmail(e.target.value) }}
@@ -45,9 +48,15 @@ const LoginForm = (props) => {
                     placeholder='password'
                     className='inp-title' />
 
-                <button
-                    onClick={login}
-                    className='log-btn'>Connect</button>
+                <div id="btns-allign"> 
+                    <button
+                        onClick={signup}
+                        className='log-btn-alt'>Sign Up</button>
+                    <button
+                        onClick={login}
+                        className='log-btn'>Connect</button>
+
+                </div>
             </form>
         </>
     );
