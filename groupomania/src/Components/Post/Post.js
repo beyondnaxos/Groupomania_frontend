@@ -3,6 +3,7 @@ import './Post.css'
 import { MdImage, MdAddLocationAlt, MdOutlineAlternateEmail } from "react-icons/md";
 import { useState } from 'react'
 import axios from 'axios';
+// import { v4 as uuidv4 } from 'uuid'
 
 
 export default function Card(props) {
@@ -10,12 +11,14 @@ export default function Card(props) {
     const [content, setContent] = useState('')
     
 
-    const post = async (e, props) => {
+    const post = async (e) => {
         e.preventDefault()
-        const response = await axios.post('http://localhost:8080/api/tutorials', { description: content })
-    
+        const setUser = props.setUser
+        const setToken= props.setToken
+        const response = await axios.post('http://localhost:8080/api/tutorials', {userId: setUser , token : setToken,  description: content })
+        console.log(setUser);
+        console.log(setToken);
         // props.setPosts([...props.posts, response.data])
-
         console.log(response.data);
        
     }

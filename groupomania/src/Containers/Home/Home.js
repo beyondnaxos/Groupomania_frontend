@@ -18,7 +18,7 @@ export default function Home(props) {
                 <>
                     <h1 className='home-title'>Bienvenue {props.user.username}</h1>
                     <div className='container-cards'>
-                        <Post setPosts={props.user}/>
+                        <Post setUser={props.user.username} setToken={props.user.token}/>
 
                         <Showpost />
                         <Showpost />
