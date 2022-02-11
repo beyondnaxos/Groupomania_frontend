@@ -11,7 +11,6 @@ const LoginForm = (props) => {
     const [password, setPassword] = useState('')
     let navigate = useNavigate()
 
-
     const login = async (e) => {
         e.preventDefault();
         const response = await Axios.post('http://localhost:8080/api/auth/login', { email: email, password: password })
@@ -38,13 +37,13 @@ const LoginForm = (props) => {
                 <input
                     onChange={(e) => { setEmail(e.target.value) }}
                     type="text"
-                    id='title'
+                    id='email'
                     placeholder='email'
                     className='inp-title' />
                 <input
                     onChange={(e) => { setPassword(e.target.value) }}
                     type="password"
-                    id='title'
+                    id='password'
                     placeholder='password'
                     className='inp-title' />
 

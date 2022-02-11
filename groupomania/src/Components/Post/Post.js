@@ -14,9 +14,18 @@ export default function Card(props) {
     const post = async (e) => {
         e.preventDefault()
         const setUser = props.setUser
-        const setToken = props.setToken
-
-        const response = await axios.post('http://localhost:8080/api/tutorials', { userId: setUser, token: setToken, description: content })
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${props.token}`
+            }
+        }
+        console.log(setUser)
+        console.log(config)
+        let form = new FormData();
+        form.append('image', selectedFile)
+        form.append('userId', setUser)
+        form.append('description', content)
+        const response = await axios.post('http://localhost:8080/api/tutorials', form, config)
         console.log(selectedFile)
         // props.setPosts([...props.posts, response.data])
         console.log(response.data)

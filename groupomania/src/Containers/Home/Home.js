@@ -33,7 +33,7 @@ export default function Home(props) {
                     <div className='container-cards'>
 
 
-                        <Post setUser={props.user.username} setToken={props.user.token}/>
+                        <Post setUser={props.user.username} token={props.user.token}/>
 
                         <Showpost />
                        

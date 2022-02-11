@@ -33,19 +33,19 @@ const SignUpForm = () => {
                 <input
                     onChange={(e) => { setEmailReg(e.target.value) }}
                     type="text"
-                    id='title'
+                    id='email'
                     placeholder='email'
                     className='inp-title' />
                 <input
                     onChange={(e) => { setUsernameReg(e.target.value) }}
                     type="text"
-                    id='title'
+                    id='username'
                     placeholder='username'
                     className='inp-title' />
                 <input
                     onChange={(e) => { setPasswordReg(e.target.value) }}
                     type="password"
-                    id='title'
+                    id='password'
                     placeholder='password'
                     className='inp-title' />
                 <div id="btns-allign">
