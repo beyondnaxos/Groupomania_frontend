@@ -6,21 +6,21 @@ import Commentpost from '../CommentPost/CommentPost';
 
 const Showpost = () => {
 
-    
-//    async function getpost(e, props) {
-//         e.preventDefault()
-//         const response = await axios.get('http://localhost:8080/api/tutorials')
-//         console.log(response.data);
-//         props.setPosts([...props.posts, response.data])
-//         console.log(props.posts);
-//         setContent('')
-//     }
+
+    //    async function getpost(e, props) {
+    //         e.preventDefault()
+    //         const response = await axios.get('http://localhost:8080/api/tutorials')
+    //         console.log(response.data);
+    //         props.setPosts([...props.posts, response.data])
+    //         console.log(props.posts);
+    //         setContent('')
+    //     }
 
     return (
         <div className='post'>
             <Idandphoto />
             <p className='post-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni consequatur ea minima voluptas nemo ab, quasi tenetur. Qui tempore eos exercitationem reprehenderit modi cupiditate.</p>
-            <Commentpost className='allign'/>
+            <Commentpost className='allign' />
         </div>
     );
 }

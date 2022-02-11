@@ -48,7 +48,7 @@ const LoginForm = (props) => {
                     placeholder='password'
                     className='inp-title' />
 
-                <div id="btns-allign"> 
+                <div id="btns-allign">
                     <button
                         onClick={signup}
                         className='log-btn-alt'>Sign Up</button>

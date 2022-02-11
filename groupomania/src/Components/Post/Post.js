@@ -5,24 +5,22 @@ import { useState } from 'react'
 import axios from 'axios';
 // import { v4 as uuidv4 } from 'uuid'
 
-
 export default function Card(props) {
 
     const [content, setContent] = useState('')
-    const [image, setImage ] = useState('')
+    const [selectedFile, setSelectedFile] = useState('')
+
 
     const post = async (e) => {
         e.preventDefault()
         const setUser = props.setUser
-        const setToken= props.setToken
+        const setToken = props.setToken
 
-        const response = await axios.post('http://localhost:8080/api/tutorials', {image: image , userId: setUser , token : setToken,  description: content })
-        console.log(setUser);
-        console.log(setToken);
-        console.log(image)
+        const response = await axios.post('http://localhost:8080/api/tutorials', { userId: setUser, token: setToken, description: content })
+        console.log(selectedFile)
         // props.setPosts([...props.posts, response.data])
-        console.log(response.data);
-       
+        console.log(response.data)
+
     }
 
     return (
@@ -37,13 +35,16 @@ export default function Card(props) {
                         className='inputPost' />
 
                     <div className='icon-form'>
+                        <MdImage className='icon' />
                         <label htmlFor="file"></label>
-                        <input type="file" id="file"
-                        onChange={(e) => { setImage(e.target.files[0]) }}
+                        <input
+                            type="file"
+                            id="file"
+                            onChange={(e) => { setSelectedFile(e.target.files[0]) }}
                         />
-                        
-                        <MdAddLocationAlt className='icon'/>
-                        <MdOutlineAlternateEmail className='icon'/>
+
+                        <MdAddLocationAlt className='icon' />
+                        <MdOutlineAlternateEmail className='icon' />
                     </div>
                 </div>
                 <div className='btn-container'>
@@ -55,4 +56,3 @@ export default function Card(props) {
 }
 
 
-{/* <MdImage className='icon' /> */}
