@@ -9,15 +9,17 @@ import axios from 'axios';
 export default function Card(props) {
 
     const [content, setContent] = useState('')
-    
+    const [image, setImage ] = useState('')
 
     const post = async (e) => {
         e.preventDefault()
         const setUser = props.setUser
         const setToken= props.setToken
-        const response = await axios.post('http://localhost:8080/api/tutorials', {userId: setUser , token : setToken,  description: content })
+
+        const response = await axios.post('http://localhost:8080/api/tutorials', {image: image , userId: setUser , token : setToken,  description: content })
         console.log(setUser);
         console.log(setToken);
+        console.log(image)
         // props.setPosts([...props.posts, response.data])
         console.log(response.data);
        
@@ -35,7 +37,11 @@ export default function Card(props) {
                         className='inputPost' />
 
                     <div className='icon-form'>
-                        <MdImage className='icon' />
+                        <label htmlFor="file"></label>
+                        <input type="file" id="file"
+                        onChange={(e) => { setImage(e.target.files[0]) }}
+                        />
+                        
                         <MdAddLocationAlt className='icon'/>
                         <MdOutlineAlternateEmail className='icon'/>
                     </div>
@@ -48,3 +54,5 @@ export default function Card(props) {
     )
 }
 
+
+{/* <MdImage className='icon' /> */}

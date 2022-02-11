@@ -6,19 +6,15 @@ import Commentpost from '../CommentPost/CommentPost';
 
 const Showpost = () => {
 
-    // const getpost = async (e, props) => {
-    //     e.preventDefault()
-    //     const response = await axios.get('http://localhost:8080/api/tutorials', { description: content })
-    //     .then(res => {
-    //         console.log(res.data);
-    //         return res.data;
-    //     })
     
-    //     // props.setPosts([...props.posts, response.data])
-
-    //     console.log(response.data);
-       
-    // }
+//    async function getpost(e, props) {
+//         e.preventDefault()
+//         const response = await axios.get('http://localhost:8080/api/tutorials')
+//         console.log(response.data);
+//         props.setPosts([...props.posts, response.data])
+//         console.log(props.posts);
+//         setContent('')
+//     }
 
     return (
         <div className='post'>
