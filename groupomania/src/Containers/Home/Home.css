@@ -21,3 +21,8 @@ body {
 body::-webkit-scrollbar {
     display: none;
   }
+
+  .post-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
