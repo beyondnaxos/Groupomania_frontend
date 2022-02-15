@@ -25,6 +25,7 @@ export default function Card(props) {
         form.append('image', selectedFile)
         form.append('userId', setUser)
         form.append('description', content)
+        form.append('published', true)
         const response = await axios.post('http://localhost:8080/api/tutorials', form, config)
         console.log(selectedFile)
         // props.setPosts([...props.posts, response.data])

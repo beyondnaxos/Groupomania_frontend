@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import Post from '../../Components/Post/Post'
 import Showpost from '../../Components/ShowPost/ShowPost'
@@ -11,39 +11,41 @@ import { Navigate } from "react-router-dom";
 
 export default function Home(props) {
 
-        // const [content, setContent] = useState('')
-        // const [username , setUsername] = useState('')
-        // const [posts, setPosts] = useState([])
-        // async function getpost(e, props) {
-        //     e.preventDefault()
-            
-        //     console.log(response.data);
-        //     setPosts([...posts, response.data])
-        //     console.log(posts);
-        //     props.setPosts([...props.posts, response.data])
-        //     console.log(props.posts);
-        //     setContent('')
-        // }
+    const [posts, setPosts] = useState([])
+
+    const getPosts = (async (props) => {
+        await fetch('http://localhost:8080/api/tutorials/published')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setPosts(data.length)
+                console.log(posts);
+            })
+    })()
+
+
+
 
     return (
-         props.user ? (
+        props.user ? (
 
-                <>
-                    <h1 className='home-title'>Bienvenue {props.user.username}</h1>
-                    <div className='container-cards'>
-
-
-                        <Post setUser={props.user.username} token={props.user.token}/>
-
-                        <Showpost />
-                       
-
-                    </div>
+            <>
+                <h1 className='home-title'>Bienvenue {props.username}</h1>
+                <div className='container-cards'>
 
 
-                </>
-            ) : (
-             <Navigate to="/login" replace={true} />
-            )
+                    <Post onchange={getPosts} setUser={props.user.username} token={props.user.token} />
+
+                    <Showpost setPosts={props.posts} />
+                    {/* <Showpost setPosts={props.setPosts}/> */}
+
+
+                </div>
+
+
+            </>
+        ) : (
+            <Navigate to="/login" replace={true} />
+        )
     )
 }
