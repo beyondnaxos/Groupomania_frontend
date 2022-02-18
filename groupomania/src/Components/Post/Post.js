@@ -28,9 +28,8 @@ export default function Card(props) {
         form.append('published', true)
         const response = await axios.post('http://localhost:8080/api/tutorials', form, config)
         console.log(selectedFile)
-        // props.setPosts([...props.posts, response.data])
         console.log(response.data)
-
+        props.setPosts([...props.posts, response.data])
     }
 
     return (
@@ -58,7 +57,7 @@ export default function Card(props) {
                     </div>
                 </div>
                 <div className='btn-container'>
-                    <button onClick={post} className='send-btn'>Create</button>
+                    <button onClick={(e) => {post(e)}} className='send-btn'>Create</button>
                 </div>
             </form>
         </div>

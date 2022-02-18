@@ -18,7 +18,13 @@ export default function Home(props) {
 
     useEffect(() => {
         async function fetchData() {
-            let data = await fetch('http://localhost:8080/api/tutorials/published')
+            const config = {
+                headers: {
+                    'Authorization': `Bearer ${props.user.token}`
+                }
+            }
+            let data = await fetch('http://localhost:8080/api/tutorials/published', config)
+            
             data = await data.json()
             setPosts(data)
         }
@@ -41,7 +47,7 @@ export default function Home(props) {
                         <p className='home-subTitle'>scroll as you want, but not too much !</p>
 
                         <div className='container-cards'>
-                            <Post setUser={props.user.username} token={props.user.token} />
+                            <Post setPosts={setPosts} posts={posts} setUser={props.user.username} token={props.user.token} />
 
                             {posts.reverse().map((data) => {
                                 return (
@@ -52,7 +58,7 @@ export default function Home(props) {
                                             </div>
                                             <div className='profil-id-container'>
                                                 <h3 className='profil-id'>{data.userId}</h3>
-                                                <p className='profil-time'><ReactTimeAgo className='date-time' date={data.createdAt} locale="en-US" /></p>
+                                                <p className='profil-time'><ReactTimeAgo className='date-time' date={new Date(data.createdAt).getTime()} locale="en-US" /></p>
                                             </div>
                                         </div>
                                         <p className='post-content'>{data.description}</p>
