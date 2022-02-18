@@ -131,3 +131,18 @@ body::-webkit-scrollbar {
     
     
 }
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 400px;
+    padding: 30px;
+}
+
+.imgPost{
+    width: 670px;
+    height: 400px;
+    
+    object-fit: cover;
+}

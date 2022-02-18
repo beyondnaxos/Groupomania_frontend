@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Home.css'
 import Post from '../../Components/Post/Post'
 import { Navigate } from "react-router-dom"
-// import axios from 'axios';
-// import {  useState } from 'react'
 // import { v4 as uuidv4 } from 'uuid'
-// import { Link } from 'react-router-dom'
 import Commentpost from '../../Components/CommentPost/CommentPost'
 import TimeAgo from 'javascript-time-ago'
 import ReactTimeAgo from 'react-time-ago'
@@ -20,15 +17,13 @@ export default function Home(props) {
 
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/tutorials/published')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setPosts(data)
-            })
-        return () => {
-            
+        async function fetchData() {
+            let data = await fetch('http://localhost:8080/api/tutorials/published')
+            data = await data.json()
+            setPosts(data)
         }
+        fetchData()
+
     }, [])
 
     console.log(posts);
@@ -61,7 +56,9 @@ export default function Home(props) {
                                             </div>
                                         </div>
                                         <p className='post-content'>{data.description}</p>
-                                        <img src="data.imageUrl" alt="" />
+                                        <div className='imgContainer'>
+                                        <img src={data.imageUrl} alt="" className='imgPost'/>
+                                        </div>
                                         <Commentpost setUser={props.user.username} token={props.user.token} className='allign' />
                                     </div>
                                 );
