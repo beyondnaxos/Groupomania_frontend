@@ -35,7 +35,7 @@ body::-webkit-scrollbar {
   }
 
   .post-content {
-    padding-left: 10px;
+    padding-left: 25px;
     padding-right: 10px;
 }
 
@@ -60,6 +60,7 @@ body::-webkit-scrollbar {
     border: 1px rgb(199, 113, 149);
     border-style: dashed ;
    margin-top: 2px;
+   margin-left: 15px;
      
 
 }
@@ -67,14 +68,15 @@ body::-webkit-scrollbar {
     border: 2px solid black;
     width: 31px;
     border-radius: 18px;
+    /* margin-left: 30px; */
 }
 
 .profil-id-container {
     display: flex;
+    margin-left: 10px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 11px;
     /* margin-top: 5px; */
 }
 
@@ -142,8 +144,8 @@ body::-webkit-scrollbar {
 }
 
 .imgPost{
-    width: 100%;
+    width: 95%;
     height: 400px;
-    
+    border-radius: 30px;
     object-fit: cover;
 }
