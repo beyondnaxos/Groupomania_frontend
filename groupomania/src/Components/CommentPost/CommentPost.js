@@ -20,14 +20,16 @@ const Commentpost = (props) => {
                 'Authorization': `Bearer ${props.token}`
             }
         }
-        
-        const response = await axios.post('http://localhost:8080/api/tutorials/:tutorialId/comment', {
+
+        const response = await axios.post(
+            'http://localhost:8080/api/tutorials/:tutorialId/comment', {
             name: setUser,
             text: content,
             tutorialId: setId
-        }, config)
+        },
+            config)
         console.log(response.data)
-        console.log(content);
+        // console.log(content);
         // props.setPosts([...props.posts, response.data])
     }
 
@@ -39,7 +41,7 @@ const Commentpost = (props) => {
                 value={content}
                 onChange={(e) => { setContent(e.target.value) }}
                 className='comment-post' />
-            <button onClick={(e) => { handleSend(e) ; console.log(content) }} className='comment-btn'>Send</button>
+            <button onClick={(e) => { handleSend(e) }} className='comment-btn'>Send</button>
         </form>
     )
 }
