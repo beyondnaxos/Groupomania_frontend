@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
+import Showcomments from '../../Components/showComments/showComments'
 import Post from '../../Components/Post/Post'
 import { Navigate } from "react-router-dom"
 // import { v4 as uuidv4 } from 'uuid'
@@ -24,7 +25,7 @@ export default function Home(props) {
                 }
             }
             let data = await fetch('http://localhost:8080/api/tutorials/published', config)
-            
+
             data = await data.json()
             setPosts(data)
         }
@@ -63,20 +64,17 @@ export default function Home(props) {
                                         </div>
                                         <p className='post-content'>{data.description}</p>
                                         <div className='imgContainer'>
-                                        <img src={data.imageUrl} alt="" className='imgPost'/>
+                                            <img src={data.imageUrl} alt="" className='imgPost' />
                                         </div>
                                         <Commentpost setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
                                         <div className="showComments">
-                                        {/* {data.comments.reverse().map((com) => {
+                                            {/* <Showcomments key={data.comments.id} text={data.comments.text} name={data.comments.name} /> */}
+                                            {/* {data.comments.reverse().map((com) => {
                                             return (
-                                                <div className='comment' key={com.id}>
-                                                    <div className='comment-id-container'>
-                                                    <h3 className='comment-id'>{com.name}</h3>
-                                                    <p className='comment-content'>{com.text}</p>
-                                                    </div>
-                                                </div>
+                                            <Showcomments comData={com} />
+
                                             )
-                                        })} */}
+                                        })}  */}
                                         </div>
                                     </div>
                                 );
