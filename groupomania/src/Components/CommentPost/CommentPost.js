@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './CommentPost.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 
 const Commentpost = (props) => {
 
-    // const [comContent, setComContent] = useState('')
 
-
-    // const postCom = async (e) => {
+    // const [content, setContent] = useState('')
+    
+    // const post = async (e) => {
     //     e.preventDefault()
     //     const setUser = props.setUser
     //     const config = {
@@ -17,24 +17,21 @@ const Commentpost = (props) => {
     //             'Authorization': `Bearer ${props.token}`
     //         }
     //     }
-    //     console.log(setUser)
-    //     console.log(config)
     //     let form = new FormData();
     //     form.append('name', setUser)
-    //     form.append('text', comContent)
-    //     const response = await axios.post('http://localhost:8080/api/tutorials', form, config)
-    //     // props.setPosts([...props.posts, response.data])
+    //     form.append('texte', content)
+    //     const response = await axios.post('http://localhost:8080/api/comments', form, config)
     //     console.log(response.data)
-
+    //     props.setPosts([...props.posts, response.data])
     // }
 
     return (
-        // <form className='comment-post'>
+       
         <input
             type="text"
             placeholder='write your comment here'
+
             className='comment-post' />
-      
             
     )
 }

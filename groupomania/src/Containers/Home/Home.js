@@ -66,6 +66,18 @@ export default function Home(props) {
                                         <img src={data.imageUrl} alt="" className='imgPost'/>
                                         </div>
                                         <Commentpost setUser={props.user.username} token={props.user.token} className='allign' />
+                                        <div className="showComments">
+                                        {data.comments.reverse().map((com) => {
+                                            return (
+                                                <div className='comment' key={com.id}>
+                                                    <div className='comment-id-container'>
+                                                    <h3 className='comment-id'>{com.name}</h3>
+                                                    <p className='comment-content'>{com.text}</p>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                        </div>
                                     </div>
                                 );
 
