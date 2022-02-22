@@ -65,9 +65,9 @@ export default function Home(props) {
                                         <div className='imgContainer'>
                                         <img src={data.imageUrl} alt="" className='imgPost'/>
                                         </div>
-                                        <Commentpost setUser={props.user.username} token={props.user.token} className='allign' />
+                                        <Commentpost setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
                                         <div className="showComments">
-                                        {data.comments.reverse().map((com) => {
+                                        {/* {data.comments.reverse().map((com) => {
                                             return (
                                                 <div className='comment' key={com.id}>
                                                     <div className='comment-id-container'>
@@ -76,7 +76,7 @@ export default function Home(props) {
                                                     </div>
                                                 </div>
                                             )
-                                        })}
+                                        })} */}
                                         </div>
                                     </div>
                                 );

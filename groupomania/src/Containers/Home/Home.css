@@ -107,6 +107,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    z-index: -10 ;
 
 }
 
