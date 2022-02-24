@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
-import Showcomments from '../../Components/showComments/showComments'
+// import Showcomments from '../../Components/showComments/showComments'
 import Post from '../../Components/Post/Post'
+// import StaticLogout from '../../Components/StaticLogout/StaticLogout'
 import { Navigate } from "react-router-dom"
 // import { v4 as uuidv4 } from 'uuid'
 import Commentpost from '../../Components/CommentPost/CommentPost'
@@ -43,6 +44,7 @@ export default function Home(props) {
                 <div className='mainBlock'>
                     <div className='staticLeft'><img src={logo} alt="groupomania logo" className='logo' /></div>
                     <div className='centerBlock'>
+                        
 
                         <h1 className='home-title'>Welcome back, <strong>{props.user.username}</strong></h1>
                         <p className='home-subTitle'>scroll as you want, but not too much !</p>
@@ -83,6 +85,9 @@ export default function Home(props) {
 
                         </div>
                     </div>
+                    {/* <div className='staticRight'> 
+                            <StaticLogout />
+                         </div> */}
                 </div>
 
             </>
