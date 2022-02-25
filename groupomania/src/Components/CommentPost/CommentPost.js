@@ -12,6 +12,7 @@ const Commentpost = (props) => {
 
     const handleSend = async (e) => {
         e.preventDefault()
+        
         const setUser = props.setUser
         const setId = props.setId
         console.log("setUser :", setUser);
@@ -28,7 +29,14 @@ const Commentpost = (props) => {
             tutorialId: setId
         },
             config)
-        console.log(response.data)
+        console.log('new commentaire', response.data)
+        props.setPost((oldState) => {
+            const posts = [...oldState]
+        const index = posts.findIndex(post => post.id === response.data.tutorialId)
+        posts[index].comments.push(response.data)
+        console.log('new state', posts)
+        return posts
+        })
         // console.log(content);
         // props.setPosts([...props.posts, response.data])
     }

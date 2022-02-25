@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
-// import Showcomments from '../../Components/showComments/showComments'
+import Showcomments from '../../Components/showComments/showComments'
 import Post from '../../Components/Post/Post'
-// import StaticLogout from '../../Components/StaticLogout/StaticLogout'
+import StaticLogout from '../../Components/StaticLogout/StaticLogout'
+// import Comments from '../../Components/Comments/Comments'
 import { Navigate } from "react-router-dom"
 // import { v4 as uuidv4 } from 'uuid'
 import Commentpost from '../../Components/CommentPost/CommentPost'
@@ -10,6 +11,7 @@ import TimeAgo from 'javascript-time-ago'
 import ReactTimeAgo from 'react-time-ago'
 import logo from './icon-left-font-monochrome-white.svg'
 import en from 'javascript-time-ago/locale/en.json'
+
 TimeAgo.addDefaultLocale(en)
 
 
@@ -44,7 +46,7 @@ export default function Home(props) {
                 <div className='mainBlock'>
                     <div className='staticLeft'><img src={logo} alt="groupomania logo" className='logo' /></div>
                     <div className='centerBlock'>
-                        
+
 
                         <h1 className='home-title'>Welcome back, <strong>{props.user.username}</strong></h1>
                         <p className='home-subTitle'>scroll as you want, but not too much !</p>
@@ -52,7 +54,7 @@ export default function Home(props) {
                         <div className='container-cards'>
                             <Post setPosts={setPosts} posts={posts} setUser={props.user.username} token={props.user.token} />
 
-                            {posts.reverse().map((data) => {
+                            {[...posts].reverse().map((data) => {
                                 return (
                                     <div className='post' key={data.id}>
                                         <div className='main-id-container'>
@@ -68,15 +70,17 @@ export default function Home(props) {
                                         <div className='imgContainer'>
                                             <img src={data.imageUrl} alt="" className='imgPost' />
                                         </div>
-                                        <Commentpost setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
+                                        <Commentpost setPost={setPosts} setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
                                         <div className="showComments">
-                                            {/* <Showcomments key={data.comments.id} text={data.comments.text} name={data.comments.name} /> */}
-                                            {/* {data.comments.reverse().map((com) => {
+                                            
+                                            {/* <Showcomments key={data.id} text={data.comments.text} name={data.comments.name} /> */}
+                                            
+                                            { [...data.comments]?.reverse().map((com) => {
                                             return (
                                             <Showcomments comData={com} />
 
                                             )
-                                        })}  */}
+                                            })} 
                                         </div>
                                     </div>
                                 );
@@ -85,9 +89,9 @@ export default function Home(props) {
 
                         </div>
                     </div>
-                    {/* <div className='staticRight'> 
-                            <StaticLogout />
-                         </div> */}
+                    <div className='staticRight'>
+                        <StaticLogout />
+                    </div>
                 </div>
 
             </>

@@ -2,9 +2,7 @@ import React from 'react';
 
 const Showcomments = (props) => {
     const comData = props.comData
-    
-    
-        
+
             return (
                 <div className='comment' key={comData.key}>
                     <div className='comment-id-container'>
