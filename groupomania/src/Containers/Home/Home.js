@@ -3,6 +3,7 @@ import './Home.css'
 import Showcomments from '../../Components/showComments/showComments'
 import Post from '../../Components/Post/Post'
 import StaticLogout from '../../Components/StaticLogout/StaticLogout'
+import StyledMenu from '../../Components/StyledMenu/StyledMenu'
 // import Comments from '../../Components/Comments/Comments'
 import { Navigate } from "react-router-dom"
 // import { v4 as uuidv4 } from 'uuid'
@@ -18,7 +19,6 @@ TimeAgo.addDefaultLocale(en)
 export default function Home(props) {
 
     const [posts, setPosts] = useState([])
-
 
     useEffect(() => {
         async function fetchData() {
@@ -57,13 +57,18 @@ export default function Home(props) {
                             {[...posts].reverse().map((data) => {
                                 return (
                                     <div className='post' key={data.id}>
-                                        <div className='main-id-container'>
-                                            <div className='profil-photo-container'>
-                                                <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
+                                        <div className='headPost'>
+                                            <div className='main-id-container'>
+                                                <div className='profil-photo-container'>
+                                                    <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
+                                                </div>
+                                                <div className='profil-id-container'>
+                                                    <h3 className='profil-id'>{data.userId}</h3>
+                                                    <p className='profil-time'><ReactTimeAgo className='date-time' date={new Date(data.createdAt).getTime()} locale="en-US" /></p>
+                                                </div>
                                             </div>
-                                            <div className='profil-id-container'>
-                                                <h3 className='profil-id'>{data.userId}</h3>
-                                                <p className='profil-time'><ReactTimeAgo className='date-time' date={new Date(data.createdAt).getTime()} locale="en-US" /></p>
+                                            <div className='menu'>
+                                                <StyledMenu setPost={setPosts}  setId={data.id} token={props.user.token} />
                                             </div>
                                         </div>
                                         <p className='post-content'>{data.description}</p>
@@ -72,15 +77,15 @@ export default function Home(props) {
                                         </div>
                                         <Commentpost setPost={setPosts} setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
                                         <div className="showComments">
-                                            
-                                            {/* <Showcomments key={data.id} text={data.comments.text} name={data.comments.name} /> */}
-                                            
-                                            { [...data.comments]?.reverse().map((com) => {
-                                            return (
-                                            <Showcomments comData={com} />
 
-                                            )
-                                            })} 
+                                            {/* <Showcomments key={data.id} text={data.comments.text} name={data.comments.name} /> */}
+
+                                            {[...data.comments]?.reverse().map((com) => {
+                                                return (
+                                                    <Showcomments comData={com} />
+
+                                                )
+                                            })}
                                         </div>
                                     </div>
                                 );

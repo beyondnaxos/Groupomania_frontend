@@ -163,3 +163,8 @@ body::-webkit-scrollbar {
     border-radius: 30px;
     object-fit: cover;
 }
+
+.headPost {
+    display: inline-flex;
+    justify-content: space-between;
+}
