@@ -54,40 +54,48 @@ const StyledMenu = styled((props) => (
 
 export default function CustomizedMenus(props) {
 
-    const  handleDeletePost = async (e) => {
-        e.preventDefault()
-        const setId = props.setId
-        const config = {
-            headers: {
-                'Authorization': `Bearer ${props.token}`
-            }
-        }
-        const response = await axios.delete(`http://localhost:8080/api/tutorials/${setId}`, config, setId)
-        console.log(response)
-        props.setPost((oldState) => {
-            const posts = [...oldState]
-        const index = posts.findIndex(post => post.id === response.data.tutorialId)
-        posts.splice(index, 1)
-        console.log('new state', posts)
-        return posts
-        })
-        // props.setPosts(props.posts.filter(post => post.id !== setId))
+  const handleDeletePost = async (e) => {
+    e.preventDefault()
+    const setId = props.setId
+    const userId = props.userId
+    const username = props.username
+    // const userId = props.userId
+    // console.log('last clg' + setId, userId)
+    const config = {
+      headers: {
+        'Authorization': `Bearer ${props.token}`
+      }
     }
+    if ( userId === username ) {
+    const response = await axios.delete(`http://localhost:8080/api/tutorials/${setId}`, config)
+    console.log(response)
+    props.setPost((oldState) => {
+      const posts = [...oldState]
+      const index = posts.findIndex(post => post.id === response.data.tutorialId)
+      posts.splice(index, 1)
+      console.log('new state', posts)
+      return posts
+    })
+  }
+  
+  }
 
-    //     console.log('delete post')
-    //     console.log(props.token)
-    //     const setId = props.setId
-    //     const config = {
-    //         headers: {
-    //             'Authorization': `Bearer ${props.token}`
-    //         }
-    //     }
-    //     const response = await axios.delete(`http://localhost:8080/api/tutorials/${setId}`, {
-    //         id : setId
-            
-    //     }, config)
-    //     console.log('delete post', response.data)
-    // }
+  
+
+  //     console.log('delete post')
+  //     console.log(props.token)
+  //     const setId = props.setId
+  //     const config = {
+  //         headers: {
+  //             'Authorization': `Bearer ${props.token}`
+  //         }
+  //     }
+  //     const response = await axios.delete(`http://localhost:8080/api/tutorials/${setId}`, {
+  //         id : setId
+
+  //     }, config)
+  //     console.log('delete post', response.data)
+  // }
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -121,14 +129,14 @@ export default function CustomizedMenus(props) {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        
+
       >
         <MenuItem onClick={handleDeletePost} disableRipple>
-          <DeleteIcon 
+          <DeleteIcon
           />
           Delete Post
         </MenuItem>
-        
+
         <Divider sx={{ my: 0.5 }} />
         <MenuItem onClick={handleClose} disableRipple>
           <MoreHorizIcon />

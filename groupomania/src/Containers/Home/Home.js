@@ -4,9 +4,7 @@ import Showcomments from '../../Components/showComments/showComments'
 import Post from '../../Components/Post/Post'
 import StaticLogout from '../../Components/StaticLogout/StaticLogout'
 import StyledMenu from '../../Components/StyledMenu/StyledMenu'
-// import Comments from '../../Components/Comments/Comments'
 import { Navigate } from "react-router-dom"
-// import { v4 as uuidv4 } from 'uuid'
 import Commentpost from '../../Components/CommentPost/CommentPost'
 import TimeAgo from 'javascript-time-ago'
 import ReactTimeAgo from 'react-time-ago'
@@ -68,7 +66,7 @@ export default function Home(props) {
                                                 </div>
                                             </div>
                                             <div className='menu'>
-                                                <StyledMenu setPost={setPosts}  setId={data.id} token={props.user.token} />
+                                                <StyledMenu setPost={setPosts}  setId={data.id} userId={data.userId} username={props.user.username} token={props.user.token} />
                                             </div>
                                         </div>
                                         <p className='post-content'>{data.description}</p>
