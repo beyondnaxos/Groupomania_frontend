@@ -57,8 +57,7 @@ export default function CustomizedMenus(props) {
   const handleDeletePost = async (e) => {
     e.preventDefault()
     const setId = props.setId
-    const userId = props.userId
-    const username = props.username
+    
     // const userId = props.userId
     // console.log('last clg' + setId, userId)
     const config = {
@@ -66,7 +65,7 @@ export default function CustomizedMenus(props) {
         'Authorization': `Bearer ${props.token}`
       }
     }
-    if ( userId === username ) {
+
     const response = await axios.delete(`http://localhost:8080/api/tutorials/${setId}`, config)
     console.log(response)
     props.setPost((oldState) => {
@@ -76,7 +75,7 @@ export default function CustomizedMenus(props) {
       console.log('new state', posts)
       return posts
     })
-  }
+  
   
   }
 

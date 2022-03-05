@@ -23,7 +23,7 @@ export default function Card(props) {
         console.log(config)
         let form = new FormData();
         form.append('image', selectedFile)
-        form.append('userId', setUser)
+        form.append('name', setUser)
         form.append('description', content)
         form.append('published', true)
         const response = await axios.post('http://localhost:8080/api/tutorials', form, config)

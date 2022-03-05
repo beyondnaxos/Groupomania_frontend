@@ -53,6 +53,7 @@ export default function Home(props) {
                             <Post setPosts={setPosts} posts={posts} setUser={props.user.username} token={props.user.token} />
 
                             {[...posts].reverse().map((data) => {
+                                console.log(data)
                                 return (
                                     <div className='post' key={data.id}>
                                         <div className='headPost'>
@@ -61,7 +62,7 @@ export default function Home(props) {
                                                     <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
                                                 </div>
                                                 <div className='profil-id-container'>
-                                                    <h3 className='profil-id'>{data.userId}</h3>
+                                                    <h3 className='profil-id'>{data.name}</h3>
                                                     <p className='profil-time'><ReactTimeAgo className='date-time' date={new Date(data.createdAt).getTime()} locale="en-US" /></p>
                                                 </div>
                                             </div>
