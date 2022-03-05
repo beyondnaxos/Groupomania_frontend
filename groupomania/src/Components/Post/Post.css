@@ -3,7 +3,7 @@
     min-width: 730px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        margin: 10px;
+    margin: 10px;
     min-height: 150px;
     text-align: left;
     display: flex;
@@ -13,22 +13,24 @@
     border-top: 5px solid rgba(0, 0, 0, 0.30);
     transform: scale(0.9);
 }
+
 .post h2 {
     font-size: 25px;
     margin-bottom: 10px;
 }
+
 .post p {
     font-size: 18px;
 }
 
-.post-form{ 
+.post-form {
     display: flex;
     flex-direction: row;
     width: 730px;
     height: 150px;
 }
 
-.input-container{
+.input-container {
     width: 550px;
     display: flex;
     justify-content: space-around;
@@ -37,7 +39,7 @@
 
 }
 
-.btn-container{
+.btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +71,7 @@
     align-self: flex-end;
     display: flex;
     flex-direction: row;
-    justify-content: space-around; 
+    justify-content: space-around;
     width: 300px;
 }
 
@@ -82,5 +84,3 @@
     border-radius: 10px;
 
 }
-
-
