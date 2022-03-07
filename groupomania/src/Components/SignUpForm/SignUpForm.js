@@ -6,11 +6,10 @@ import { useNavigate } from 'react-router-dom'
 
 const SignUpForm = () => {
 
-    const UseRegex= (input) => {
-        let regex = /admin@[a-zA-Z]+\.[a-zA-Z]+/i
-        return regex.test(input)
+    function UseRegex(input) {
+        let regex = /[a-zA-Z]+@admin-groupomania\.com/i;
+        return regex.test(input);
     }
-
     const [emailReg, setEmailReg] = useState('')
     const [usernameReg, setUsernameReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
