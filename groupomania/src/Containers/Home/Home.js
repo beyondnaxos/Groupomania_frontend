@@ -17,7 +17,7 @@ TimeAgo.addDefaultLocale(en)
 export default function Home(props) {
 
     const [posts, setPosts] = useState([])
-
+    
     useEffect(() => {
         async function fetchData() {
             const config = {
