@@ -168,3 +168,7 @@ body::-webkit-scrollbar {
     display: inline-flex;
     justify-content: space-between;
 }
+
+.menuRight {
+    display: inline;
+}

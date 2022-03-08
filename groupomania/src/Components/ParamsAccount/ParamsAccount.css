@@ -1,0 +1,13 @@
+.menuUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#simpleMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
