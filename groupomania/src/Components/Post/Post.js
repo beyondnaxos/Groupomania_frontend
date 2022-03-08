@@ -22,7 +22,7 @@ export default function Card(props) {
         console.log(setUser)
         console.log(config)
         let form = new FormData();
-        form.append('image', selectedFile)
+        form.append('image', selectedFile )
         form.append('name', setUser)
         form.append('description', content)
         form.append('published', true)

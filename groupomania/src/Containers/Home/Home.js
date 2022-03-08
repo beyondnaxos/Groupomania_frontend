@@ -29,6 +29,7 @@ export default function Home(props) {
 
             data = await data.json()
             setPosts(data)
+            console.log(props.user)
         }
         fetchData()
 
@@ -95,7 +96,7 @@ export default function Home(props) {
                     </div>
                     <div className='staticRight'>
                         <div className='menuRight'>
-                        <StaticLogout />
+                        <StaticLogout setPosts={setPosts}  userId={props.user.userId} username={props.user.username} token={props.user.token}/>
                         </div>
                     </div>
                 </div>
