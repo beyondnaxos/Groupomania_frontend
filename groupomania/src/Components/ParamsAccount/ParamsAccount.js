@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { Navigate } from "react-router-dom"
-
+import ProfilModal from '../ProfilModal/ProfilModal';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import './ParamsAccount.css';
 import MenuItem from '@mui/material/MenuItem';
+import axios from 'axios';
 
-export default function PositionedMenu() {
+export default function PositionedMenu(props) {
+  const setPosts  = props.setPosts
+  const  username = props.username
+  const  token = props.token
+  const userId = props.userId
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -26,7 +30,7 @@ export default function PositionedMenu() {
     window.location.replace('/')  
     }
 
-    
+  
 
   return (
     <div className='menuUser'>
@@ -55,9 +59,8 @@ export default function PositionedMenu() {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        <MenuItem ><ProfilModal setPosts={setPosts}  userId={userId} username={username} token={token}/></MenuItem>
+        <MenuItem id='logout' onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>
   );

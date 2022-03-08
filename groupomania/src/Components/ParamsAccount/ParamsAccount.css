@@ -11,3 +11,11 @@
     color: white;
     
 }
+
+
+#logout  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(34, 34, 34);
+}
