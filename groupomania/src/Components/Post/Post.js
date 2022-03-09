@@ -50,13 +50,14 @@ export default function Card(props) {
                         className='inputPost' />
 
                     <div className='icon-form'>
-                        <MdImage className='icon' />
-                        <label htmlFor="file"></label>
                         <input
+                           className='inputfile' 
+                           name='file'
                             type="file"
                             id="file"
                             onChange={(e) => { setSelectedFile(e.target.files[0]) }}
                         />
+                        <label for="file"><MdImage className='iconUpload' /></label>
 
                         <MdAddLocationAlt className='icon' />
                         <MdOutlineAlternateEmail className='icon' />
