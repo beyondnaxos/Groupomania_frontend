@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import './ParamsAccount.css';
 import MenuItem from '@mui/material/MenuItem';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default function PositionedMenu(props) {
   const setPosts  = props.setPosts

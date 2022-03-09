@@ -1,4 +1,5 @@
 import React from 'react';
+import './showComments.css'
 
 const Showcomments = (props) => {
     const comData = props.comData

@@ -11,6 +11,7 @@ import TimeAgo from 'javascript-time-ago'
 import ReactTimeAgo from 'react-time-ago'
 import logo from './icon-left-font-monochrome-white.svg'
 import en from 'javascript-time-ago/locale/en.json'
+import WorkersList from '../../Components/WorkersList/WorkersList'
 
 
 TimeAgo.addDefaultLocale(en)
@@ -45,7 +46,9 @@ export default function Home(props) {
 
             <>
                 <div className='mainBlock'>
-                    <div className='staticLeft'><img src={logo} alt="groupomania logo" className='logo' /></div>
+                    <div className='staticLeft'><img src={logo} alt="groupomania logo" className='logo' />
+                    <WorkersList token={props.user.token}/>
+                    </div>
                     <div className='centerBlock'>
 
 
@@ -58,12 +61,12 @@ export default function Home(props) {
                             {[...posts].reverse().map((data) => {
                                 console.log(data)
                                 return (
-                                    <div className='post' key={data.id}>
+                                    <div className='post rounded' key={data.id}>
                                         <div className='headPost'>
                                             <div className='main-id-container'>
-                                                <div className='profil-photo-container'>
+                                                {/* <div className='profil-photo-container'> */}
                                                     <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
-                                                </div>
+                                                {/* </div> */}
                                                 <div className='profil-id-container'>
                                                     <h3 className='profil-id'>{data.name}</h3>
                                                     <p className='profil-time'><ReactTimeAgo className='date-time' date={new Date(data.createdAt).getTime()} locale="en-US" /></p>
@@ -73,13 +76,17 @@ export default function Home(props) {
                                                 <StyledMenu setPost={setPosts}  setId={data.id} userId={data.userId} username={props.user.username} token={props.user.token} />
                                             </div>
                                         </div>
+                                        <div className='post-content-container'>
                                         <p className='post-content'>{data.description}</p>
+                                        </div>
                                         <div className='imgContainer'>
                                             <img src={data.imageUrl} alt="" className='imgPost' />
                                         </div>
+                                        <div className='bigger-container'>
                                         <div className='like-container'>
                                         <Commentpost setPost={setPosts} setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
                                         <LikeButton />
+                                        </div>
                                         </div>
                                         <div className="showComments">
 
