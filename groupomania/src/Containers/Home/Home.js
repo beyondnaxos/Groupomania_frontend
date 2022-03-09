@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
 import Showcomments from '../../Components/showComments/showComments'
+import LikeButton from '../../Components/LikeButton/LikeButton'
 import Post from '../../Components/Post/Post'
 import StaticLogout from '../../Components/StaticLogout/StaticLogout'
 import StyledMenu from '../../Components/StyledMenu/StyledMenu'
@@ -10,6 +11,7 @@ import TimeAgo from 'javascript-time-ago'
 import ReactTimeAgo from 'react-time-ago'
 import logo from './icon-left-font-monochrome-white.svg'
 import en from 'javascript-time-ago/locale/en.json'
+
 
 TimeAgo.addDefaultLocale(en)
 
@@ -75,7 +77,10 @@ export default function Home(props) {
                                         <div className='imgContainer'>
                                             <img src={data.imageUrl} alt="" className='imgPost' />
                                         </div>
+                                        <div className='like-container'>
                                         <Commentpost setPost={setPosts} setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
+                                        <LikeButton />
+                                        </div>
                                         <div className="showComments">
 
                                             {/* <Showcomments key={data.id} text={data.comments.text} name={data.comments.name} /> */}
