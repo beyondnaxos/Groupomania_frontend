@@ -24,7 +24,7 @@ export default function BasicModal(props) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    
+
     const deleteAccount = (e) => {
         e.preventDefault()
         const config = {
@@ -32,7 +32,6 @@ export default function BasicModal(props) {
                 'Authorization': `Bearer ${token}`
             }
         }
-        
         const response = axios.delete(`http://localhost:8080/api/auth/users/${userId}`, config)
         console.log(response)
         localStorage.removeItem('token')

@@ -42,14 +42,13 @@ const Commentpost = (props) => {
     }
 
     return (
-        <form className='comment-form'>
+        <form onSubmit={(e) => { handleSend(e) }} className='comment-form'>
             <input
                 type="text"
                 placeholder='write your comment here'
                 value={content}
                 onChange={(e) => { setContent(e.target.value) }}
                 className='comment-post' />
-            <button onClick={(e) => { handleSend(e) }} className='comment-btn'>Send</button>
         </form>
     )
 }

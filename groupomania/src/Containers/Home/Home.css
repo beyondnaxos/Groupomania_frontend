@@ -172,3 +172,17 @@ body::-webkit-scrollbar {
 .menuRight {
     display: inline;
 }
+
+.like-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
