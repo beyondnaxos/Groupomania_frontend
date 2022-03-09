@@ -19,7 +19,6 @@ const style = {
 
 export default function BasicModal(props) {
     const userId = props.userId
-    const username = props.username
     const token = props.token
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
