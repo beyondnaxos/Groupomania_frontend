@@ -20,7 +20,7 @@ TimeAgo.addDefaultLocale(en)
 export default function Home(props) {
 
     const [posts, setPosts] = useState([])
-    
+
     useEffect(() => {
         async function fetchData() {
             const config = {
@@ -32,7 +32,7 @@ export default function Home(props) {
 
             data = await data.json()
             setPosts(data)
-            console.log(props.user)
+            // console.log(props.user)
         }
         fetchData()
 
@@ -47,7 +47,8 @@ export default function Home(props) {
             <>
                 <div className='mainBlock'>
                     <div className='staticLeft'><img src={logo} alt="groupomania logo" className='logo' />
-                    <WorkersList token={props.user.token}/>
+                        <WorkersList token={props.user.token} />
+
                     </div>
                     <div className='centerBlock'>
 
@@ -65,7 +66,7 @@ export default function Home(props) {
                                         <div className='headPost'>
                                             <div className='main-id-container'>
                                                 {/* <div className='profil-photo-container'> */}
-                                                    <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
+                                                <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
                                                 {/* </div> */}
                                                 <div className='profil-id-container'>
                                                     <h3 className='profil-id'>{data.name}</h3>
@@ -73,20 +74,20 @@ export default function Home(props) {
                                                 </div>
                                             </div>
                                             <div className='menu'>
-                                                <StyledMenu setPost={setPosts}  setId={data.id} userId={data.userId} username={props.user.username} token={props.user.token} />
+                                                <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={props.user.username} token={props.user.token} />
                                             </div>
                                         </div>
                                         <div className='post-content-container'>
-                                        <p className='post-content'>{data.description}</p>
+                                            <p className='post-content'>{data.description}</p>
                                         </div>
                                         <div className='imgContainer'>
                                             <img src={data.imageUrl} alt="" className='imgPost' />
                                         </div>
                                         <div className='bigger-container'>
-                                        <div className='like-container'>
-                                        <Commentpost setPost={setPosts} setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
-                                        <LikeButton />
-                                        </div>
+                                            <div className='like-container'>
+                                                <Commentpost setPost={setPosts} setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
+                                                <LikeButton />
+                                            </div>
                                         </div>
                                         <div className="showComments">
 
@@ -94,7 +95,7 @@ export default function Home(props) {
 
                                             {[...data.comments]?.reverse().map((com) => {
                                                 return (
-                                                    <Showcomments comData={com} />
+                                                    <Showcomments token={ props.user.token} comData={com} postId={data.id} setPost={setPosts} />
 
                                                 )
                                             })}
@@ -108,7 +109,7 @@ export default function Home(props) {
                     </div>
                     <div className='staticRight'>
                         <div className='menuRight'>
-                        <StaticLogout setPosts={setPosts}  userId={props.user.userId} username={props.user.username} token={props.user.token}/>
+                            <StaticLogout setPosts={setPosts} userId={props.user.userId} username={props.user.username} token={props.user.token} />
                         </div>
                     </div>
                 </div>
