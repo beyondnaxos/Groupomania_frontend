@@ -26,7 +26,10 @@ const Showcomments = (props) => {
         console.log(response)
         props.setPost((oldState) => {
             const posts = [...oldState]
-            
+            const index = posts.findIndex(post => post.id === id )
+            const comIndex = posts[index].comments.findIndex(comment => comment.id === commentId )
+            posts[index].comments.splice(comIndex, 1)
+
             
           return posts
         })
@@ -39,7 +42,7 @@ const Showcomments = (props) => {
                         <p className='comment-content'>{comData.text}</p>
                     </div>
                     <div className='comment-button-container'>
-                        <button className='comment-button' onClick={handleDeleteComment}><DeleteIcon /></button>
+                       { props.user.isAdmin || props.user.userId === comData.userId ? <button className='comment-button' onClick={handleDeleteComment}><DeleteIcon /></button> : null }
 
                     </div>
                 </div>
