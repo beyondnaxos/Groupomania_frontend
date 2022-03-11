@@ -2,7 +2,9 @@
     width: 650px;
     background-color: #ffffff;
     border-top: dashed  2px  black ;
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .comment-id-container {
@@ -22,4 +24,26 @@ margin-left: 5px;
 
 .comment-content {
 padding: 0;
+}
+
+.comment-button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.comment-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .showComments {
+        width: 90%;
+    }
+
+    .comment {
+        width: 90%;
+    }
 }

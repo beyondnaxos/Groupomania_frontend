@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './showComments.css'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const Showcomments = (props) => {
     const comData = props.comData
@@ -18,6 +19,8 @@ const Showcomments = (props) => {
             'Authorization': `Bearer ${props.token}`
           }
         }
+
+    
     
         const response = await axios.delete(`http://localhost:8080/api/tutorials/${id}/comment/${commentId}`, config)
         console.log(response)
@@ -36,7 +39,7 @@ const Showcomments = (props) => {
                         <p className='comment-content'>{comData.text}</p>
                     </div>
                     <div className='comment-button-container'>
-                        <button className='comment-button' onClick={handleDeleteComment}>Delete</button>
+                        <button className='comment-button' onClick={handleDeleteComment}><DeleteIcon /></button>
 
                     </div>
                 </div>
