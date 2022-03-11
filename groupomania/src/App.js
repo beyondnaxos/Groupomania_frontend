@@ -18,7 +18,7 @@ function App() {
     <Route path='/signup' element={<SignUp />}/>
     <Route path='/' element={<Home user={user} />}/>
     </Routes>
-  );
+  )
 }
 
 export default App;
