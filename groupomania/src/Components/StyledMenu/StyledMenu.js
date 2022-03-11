@@ -71,7 +71,7 @@ export default function CustomizedMenus(props) {
     console.log(response)
     props.setPost((oldState) => {
       const posts = [...oldState]
-      const index = posts.findIndex(post => post.id === response.data.tutorialId)
+      const index = posts.findIndex(post => post.id === id )
       posts.splice(index, 1)
       console.log('new state', posts)
       return posts
