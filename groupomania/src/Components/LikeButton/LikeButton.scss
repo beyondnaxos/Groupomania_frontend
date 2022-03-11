@@ -189,3 +189,10 @@ $primary: #0004ff;
     opacity: 0;
   }
 }
+
+
+.like-text, #liked {
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+}
