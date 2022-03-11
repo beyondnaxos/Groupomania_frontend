@@ -61,11 +61,13 @@ export default function Home(props) {
 
                             {[...posts].reverse().map((data) => {
                                 console.log(data)
+                                console.log(props.user)
                                 return (
                                     <div className='post rounded' key={data.id}>
                                         <div className='headPost'>
                                             <div className='main-id-container'>
                                                 {/* <div className='profil-photo-container'> */}
+                    
                                                 <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
                                                 {/* </div> */}
                                                 <div className='profil-id-container'>
@@ -80,9 +82,10 @@ export default function Home(props) {
                                         <div className='post-content-container'>
                                             <p className='post-content'>{data.description}</p>
                                         </div>
-                                        <div className='imgContainer'>
+                                        {data.imageUrl ? <div className='imgContainer'>
                                             <img src={data.imageUrl} alt="" className='imgPost' />
-                                        </div>
+                                        </div> : null}
+                                        
                                         <div className='bigger-container'>
                                             <div className='like-container'>
                                                 <Commentpost setPost={setPosts} setUser={props.user.username} setId={data.id} token={props.user.token} className='allign' />
@@ -95,7 +98,7 @@ export default function Home(props) {
 
                                             {[...data.comments]?.reverse().map((com) => {
                                                 return (
-                                                    <Showcomments token={ props.user.token} comData={com} postId={data.id} setPost={setPosts} />
+                                                    <Showcomments token={ props.user.token} user={props.user} comData={com} postId={data.id} setPost={setPosts} />
 
                                                 )
                                             })}
