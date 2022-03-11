@@ -13,9 +13,7 @@ import logo from './icon-left-font-monochrome-white.svg'
 import en from 'javascript-time-ago/locale/en.json'
 import WorkersList from '../../Components/WorkersList/WorkersList'
 
-
 TimeAgo.addDefaultLocale(en)
-
 
 export default function Home(props) {
 
@@ -42,7 +40,7 @@ export default function Home(props) {
 
     return (
 
-        props.user ? (
+        props.user  ? (
 
             <>
                 <div className='mainBlock'>
@@ -76,7 +74,7 @@ export default function Home(props) {
                                                 </div>
                                             </div>
                                             <div className='menu'>
-                                                <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={props.user.username} token={props.user.token} />
+                                            { props.user.isAdmin || props.user.userId === data.userId ? <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={props.user.username} token={props.user.token} /> : null }
                                             </div>
                                         </div>
                                         <div className='post-content-container'>
