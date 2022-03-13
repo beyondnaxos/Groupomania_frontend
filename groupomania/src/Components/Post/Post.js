@@ -40,12 +40,15 @@ export default function Card(props) {
         <div className="post">
             <form className='post-form'>
                 <div className='input-container'>
+               
                     <input
                         onChange={(e) => { setContent(e.target.value) }}
                         type="text"
                         placeholder='create a post'
                         value={content}
+                         aria-label='content-input'
                         className='inputPost' />
+                    
 
                         
 
@@ -56,8 +59,9 @@ export default function Card(props) {
                             type="file"
                             id="file"
                             onChange={(e) => { setSelectedFile(e.target.files[0]) }}
+                            aria-label='file-input'
                         />
-                        <label for="file"><MdImage className='iconUpload' /></label>
+                        <label for="file" aria-label="delete-com"><MdImage aria-label="delete-com-icon" className='iconUpload' /></label>
 
                         <MdAddLocationAlt className='icon' />
                         <MdOutlineAlternateEmail className='icon' />

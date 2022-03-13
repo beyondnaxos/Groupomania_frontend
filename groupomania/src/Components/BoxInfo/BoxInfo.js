@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import './BoxInfo.css'
 
 const bull = (
   <Box
@@ -17,7 +18,7 @@ const bull = (
 
 export default function BasicCard() {
   return (
-    <Card  sx={{ minWidth: 350 , borderRadius: 4}}>
+    <Card id='box-msg-card' sx={{ minWidth: 350 , borderRadius: 4}}>
       <CardContent>
       
         <Typography variant="h5" component="div">

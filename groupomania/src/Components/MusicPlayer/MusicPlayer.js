@@ -64,7 +64,7 @@ export default function MusicPlayerSlider() {
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)'
   return (
     <Box
-      id='music-player'
+      id='music-card'
       sx={{ width: '80%', overflow: 'hidden' }}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>

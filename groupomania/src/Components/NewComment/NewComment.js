@@ -39,11 +39,13 @@ const NewComment = (props) => {
 
     return (
         <form onSubmit={(e) => { handleSend(e) }} className='comment-form'>
+            
             <input
                 type="text"
                 placeholder='write your comment here'
                 value={content}
                 onChange={(e) => { setContent(e.target.value) }}
+                aria-label='comment-input'
                 className='comment-post' />
         </form>
     )

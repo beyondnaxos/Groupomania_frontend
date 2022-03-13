@@ -76,7 +76,7 @@ export default function Home(props) {
                                                 <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='profil pic' />
                                                 {/* </div> */}
                                                 <div className='profil-id-container'>
-                                                    <h3 className='profil-id'>{data.name}</h3>
+                                                    <h2 className='profil-id'>{data.name}</h2>
                                                     <p className='profil-time'><ReactTimeAgo className='date-time' date={new Date(data.createdAt).getTime()} locale="en-US" /></p>
                                                 </div>
                                             </div>
@@ -116,10 +116,13 @@ export default function Home(props) {
                     </div>
                     <div className='staticRight'>
                         <div className='menuRight'>
+                            <div className='headMenu'>
+                            <img src={logo} alt="groupomania logo" className='headLogo' />  
                             <Dashboard setPosts={setPosts} setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={user} token={token} />
+                            </div>
                             <AdminMsg/>
                             <BoxInfo />
-                            <MusicPlayer className='player' />
+                            <MusicPlayer  className='player' />
                         </div>
                     </div>
                 </div>
