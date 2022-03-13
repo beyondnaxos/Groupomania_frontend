@@ -76,7 +76,7 @@ export default function Home(props) {
                                             <div className='main-id-container'>
                                                 {/* <div className='profil-photo-container'> */}
                     
-                                                <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='' />
+                                                <img className='profil-photo' src='https://www.w3schools.com/howto/img_avatar.png' alt='profil pic' />
                                                 {/* </div> */}
                                                 <div className='profil-id-container'>
                                                     <h3 className='profil-id'>{data.name}</h3>

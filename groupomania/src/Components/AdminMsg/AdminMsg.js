@@ -27,8 +27,7 @@ export default function MultiActionAreaCard() {
           <Typography variant="body2" color="text.secondary">
            Groupomania est fière de vous annoncer que nous avons décidé de faire un nouveau site internet.
               Nous avons décidé de le mettre en ligne pour que vous puissiez y accéder.
-                En que vous aurez la chance de découvrir ce site et de nous faire part de vos
-                impressions.
+                
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -69,6 +69,7 @@ body::-webkit-scrollbar {
 .profil-photo {
     /* border: 2px solid black; */
     width: 38px;
+    height: 38px;
     border-radius: 0 14px 0 0;
     /* margin-left: 30px; */
 }
@@ -83,7 +84,7 @@ body::-webkit-scrollbar {
 }
 
 .profil-id , .profil-time {
-    
+   
     margin: 0;
 }
 .profil-id  {
