@@ -14,6 +14,7 @@ import en from 'javascript-time-ago/locale/en.json'
 import WorkersList from '../../Components/WorkersList/WorkersList'
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer'
 import AdminMsg from '../../Components/AdminMsg/AdminMsg'
+import BoxInfo from '../../Components/BoxInfo/BoxInfo'
 TimeAgo.addDefaultLocale(en)
 
 export default function Home(props) {
@@ -117,6 +118,7 @@ export default function Home(props) {
                         <div className='menuRight'>
                             <Dashboard setPosts={setPosts} setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={user} token={token} />
                             <AdminMsg/>
+                            <BoxInfo />
                             <MusicPlayer className='player' />
                         </div>
                     </div>

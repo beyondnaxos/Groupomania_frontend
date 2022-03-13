@@ -25,14 +25,14 @@
 }
 
 .greenBtn {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 10px;
     background-color: rgb(53, 253, 53);
 }
 .redBtn {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 10px;
     background-color: rgb(253, 110, 53);
 }

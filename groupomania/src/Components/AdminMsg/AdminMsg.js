@@ -10,8 +10,6 @@ import './AdminMsg.css'
 export default function MultiActionAreaCard() {
   return (
     <Card
-      id='cardMsg'
-
       sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
@@ -21,7 +19,7 @@ export default function MultiActionAreaCard() {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div"  id='TypoAdmin'>
             Message du jour !
           </Typography>
           <Typography variant="body2" color="text.secondary">
