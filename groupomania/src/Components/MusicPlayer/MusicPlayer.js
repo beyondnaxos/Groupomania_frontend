@@ -1,18 +1,18 @@
-import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Slider from '@mui/material/Slider';
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import PauseRounded from '@mui/icons-material/PauseRounded';
-import PlayArrowRounded from '@mui/icons-material/PlayArrowRounded';
-import FastForwardRounded from '@mui/icons-material/FastForwardRounded';
-import FastRewindRounded from '@mui/icons-material/FastRewindRounded';
-import VolumeUpRounded from '@mui/icons-material/VolumeUpRounded';
-import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded';
+import * as React from 'react'
+import { styled, useTheme } from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Slider from '@mui/material/Slider'
+import IconButton from '@mui/material/IconButton'
+import Stack from '@mui/material/Stack'
+import PauseRounded from '@mui/icons-material/PauseRounded'
+import PlayArrowRounded from '@mui/icons-material/PlayArrowRounded'
+import FastForwardRounded from '@mui/icons-material/FastForwardRounded'
+import FastRewindRounded from '@mui/icons-material/FastRewindRounded'
+import VolumeUpRounded from '@mui/icons-material/VolumeUpRounded'
+import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded'
 import vitalic from './vitalic.jpg'
-import './MusicPlayer.css';
+import './MusicPlayer.css'
 
 
 const Widget = styled('div')(({ theme }) => ({
@@ -21,7 +21,7 @@ const Widget = styled('div')(({ theme }) => ({
   width: 343,
   maxWidth: '100%',
   margin: 'auto',
-  marginBottom : '30px',
+  marginBottom: '30px',
   position: 'relative',
   zIndex: 1,
   backgroundColor:
@@ -40,32 +40,32 @@ const CoverImage = styled('div')({
   '& > img': {
     width: '100%',
   },
-});
+})
 
 const TinyText = styled(Typography)({
   fontSize: '0.75rem',
   opacity: 0.38,
   fontWeight: 500,
   letterSpacing: 0.2,
-});
+})
 
 export default function MusicPlayerSlider() {
-  const theme = useTheme();
+  const theme = useTheme()
   const duration = 200; // seconds
-  const [position, setPosition] = React.useState(32);
-  const [paused, setPaused] = React.useState(false);
+  const [position, setPosition] = React.useState(32)
+  const [paused, setPaused] = React.useState(false)
   function formatDuration(value) {
-    const minute = Math.floor(value / 60);
-    const secondLeft = value - minute * 60;
-    return `${minute}:${secondLeft < 9 ? `0${secondLeft}` : secondLeft}`;
+    const minute = Math.floor(value / 60)
+    const secondLeft = value - minute * 60
+    return `${minute}:${secondLeft < 9 ? `0${secondLeft}` : secondLeft}`
   }
-  const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
+  const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000'
   const lightIconColor =
-    theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
+    theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)'
   return (
-    <Box 
-    id='music-player'
-    sx={{ width: '80%', overflow: 'hidden' }}>
+    <Box
+      id='music-player'
+      sx={{ width: '80%', overflow: 'hidden' }}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <CoverImage>
@@ -105,11 +105,10 @@ export default function MusicPlayerSlider() {
                 boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
               },
               '&:hover, &.Mui-focusVisible': {
-                boxShadow: `0px 0px 0px 8px ${
-                  theme.palette.mode === 'dark'
+                boxShadow: `0px 0px 0px 8px ${theme.palette.mode === 'dark'
                     ? 'rgb(255 255 255 / 16%)'
                     : 'rgb(0 0 0 / 16%)'
-                }`,
+                  }`,
               },
               '&.Mui-active': {
                 width: 20,
@@ -186,7 +185,6 @@ export default function MusicPlayerSlider() {
           <VolumeUpRounded htmlColor={lightIconColor} />
         </Stack>
       </Widget>
-      {/* <WallPaper /> */}
     </Box>
-  );
+  )
 }

@@ -1,9 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import './LoginForm.css'
 import Axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
 
 const LoginForm = (props) => {
 
@@ -13,7 +12,7 @@ const LoginForm = (props) => {
     let navigate = useNavigate()
 
     const login = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const response = await Axios.post('http://localhost:8080/api/auth/login', { email: email, password: password })
 
         localStorage.setItem('token', response.data.token)
@@ -23,7 +22,7 @@ const LoginForm = (props) => {
         localStorage.setItem('isAdmin', response.data.isAdmin)
 
       
-        console.log(response);
+        console.log(response)
         props.setUser({
             ...response.data
         })
@@ -67,7 +66,7 @@ const LoginForm = (props) => {
                 </div>
             </form>
         </>
-    );
+    )
 }
 
-export default LoginForm;
+export default LoginForm

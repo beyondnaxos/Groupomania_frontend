@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import axios from 'axios';
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import Modal from '@mui/material/Modal'
+import axios from 'axios'
 
 const style = {
     position: 'absolute',
@@ -25,12 +25,14 @@ export default function BasicModal(props) {
     const handleClose = () => setOpen(false);
 
     const deleteAccount = (e) => {
+        
         e.preventDefault()
         const config = {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         }
+
         const response = axios.delete(`http://localhost:8080/api/auth/users/${userId}`, config)
         console.log(response)
         localStorage.removeItem('token')
@@ -39,12 +41,10 @@ export default function BasicModal(props) {
         localStorage.removeItem('isAdmin')
         localStorage.removeItem('userId')
         localStorage.removeItem('isLoggedIn')
-       
+
         window.location.reload()
 
     }
-
-
 
     return (
         <div>
@@ -72,5 +72,5 @@ export default function BasicModal(props) {
                 </Box>
             </Modal>
         </div>
-    );
+    )
 }

@@ -1,25 +1,24 @@
-import * as React from 'react';
-import ModalDeleteAccount from '../ModalDeleteAccount/ModalDeleteAccount';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import './ParamsAccount.css';
-import MenuItem from '@mui/material/MenuItem';
-// import axios from 'axios';
+import * as React from 'react'
+import ModalDeleteAccount from '../ModalDeleteAccount/ModalDeleteAccount'
+import Button from '@mui/material/Button'
+import Menu from '@mui/material/Menu'
+import './ParamsAccount.css'
+import MenuItem from '@mui/material/MenuItem'
 
 export default function PositionedMenu(props) {
-  const setPosts  = props.setPosts
-  const  username = props.username
-  const  token = props.token
+  const setPosts = props.setPosts
+  const username = props.username
+  const token = props.token
   const userId = props.userId
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const open = Boolean(anchorEl)
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleClose = () => {
-    setAnchorEl(null);
+    setAnchorEl(null)
   };
 
   const handleLogout = (e) => {
@@ -32,15 +31,13 @@ export default function PositionedMenu(props) {
     localStorage.removeItem('isAdmin')
     localStorage.removeItem('userId')
     localStorage.removeItem('isLoggedIn')
-    window.location.replace('/')  
-    }
-
-  
+    window.location.replace('/')
+  }
 
   return (
     <div className='menuUser'>
       <Button
-        
+
         id="demo-positioned-button"
         aria-controls={open ? 'demo-positioned-menu' : undefined}
         aria-haspopup="true"
@@ -64,9 +61,9 @@ export default function PositionedMenu(props) {
           horizontal: 'left',
         }}
       >
-        <MenuItem ><ModalDeleteAccount setPosts={setPosts}  userId={userId} username={username} token={token}/></MenuItem>
+        <MenuItem ><ModalDeleteAccount setPosts={setPosts} userId={userId} username={username} token={token} /></MenuItem>
         <MenuItem id='logout' onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>
-  );
+  )
 }

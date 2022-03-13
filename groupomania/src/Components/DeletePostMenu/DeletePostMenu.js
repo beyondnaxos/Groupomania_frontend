@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Divider from '@mui/material/Divider';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import axios from 'axios';
-import './StyledMenu.css';
+import * as React from 'react'
+import { styled, alpha } from '@mui/material/styles'
+import Button from '@mui/material/Button'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import DeleteIcon from '@mui/icons-material/Delete'
+import Divider from '@mui/material/Divider'
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import axios from 'axios'
+import './StyledMenu.css'
 
 
 const StyledMenu = styled((props) => (
@@ -56,11 +56,9 @@ const StyledMenu = styled((props) => (
 export default function CustomizedMenus(props) {
 
   const handleDeletePost = async (e) => {
+
     e.preventDefault()
     const id = props.setId
-   
-    // const userId = props.userId
-    // console.log('last clg' + setId, userId)
     const config = {
       headers: {
         'Authorization': `Bearer ${props.token}`
@@ -71,30 +69,29 @@ export default function CustomizedMenus(props) {
     console.log(response)
     props.setPost((oldState) => {
       const posts = [...oldState]
-      const index = posts.findIndex(post => post.id === id )
+      const index = posts.findIndex(post => post.id === id)
       posts.splice(index, 1)
       console.log('new state', posts)
       return posts
     })
-  
-  
+
+
   }
 
-
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const open = Boolean(anchorEl)
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setAnchorEl(event.currentTarget)
   };
   const handleClose = () => {
-    setAnchorEl(null);
+    setAnchorEl(null)
   };
 
   return (
     <div id='buttonColor'>
       <Button
         id="demo-customized-button"
-        
+
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
@@ -128,5 +125,5 @@ export default function CustomizedMenus(props) {
         </MenuItem>
       </StyledMenu>
     </div>
-  );
+  )
 }

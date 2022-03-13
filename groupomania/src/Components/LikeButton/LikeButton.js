@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import cn from "classnames";
-import { ReactComponent as Hand } from "./hand.svg";
+import React, { useState } from "react"
+import cn from "classnames"
+import { ReactComponent as Hand } from "./hand.svg"
 
-import "./LikeButton.scss";
+import "./LikeButton.scss"
 
-const particleList = Array.from(Array(10));
+const particleList = Array.from(Array(10))
 
 const LikeButton = () => {
-  const [liked, setLiked] = useState(null);
-  const [clicked, setClicked] = useState(false);
+  const [liked, setLiked] = useState(null)
+  const [clicked, setClicked] = useState(false)
 
   return (
     <button
       onClick={() => {
-        setLiked(!liked);
-        setClicked(true);
+        setLiked(!liked)
+        setClicked(true)
       }}
       onAnimationEnd={() => setClicked(false)}
       className={cn("like-button-wrapper", {
@@ -44,7 +44,7 @@ const LikeButton = () => {
         <span id='liked' className={cn("suffix", { liked }) }>d</span>
       </div>
     </button>
-  );
-};
+  )
+}
 
-export default LikeButton;
+export default LikeButton
