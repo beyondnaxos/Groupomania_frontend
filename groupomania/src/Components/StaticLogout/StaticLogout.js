@@ -8,10 +8,11 @@ export default function StaticLogout(props) {
     const token = props.token
     const userId = props.userId
 
+
     return (
     
             <ul className='staticProfil'>
-                <ParamsAccount setPosts={setPosts}   userId={userId} username={username} token={token}/>
+                <ParamsAccount setPosts={setPosts}    userId={userId} username={username} token={token}/>
             </ul>
     
     )

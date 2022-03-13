@@ -9,6 +9,7 @@ const LoginForm = (props) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const setIsLoggedIn = props.setIsLoggedIn
     let navigate = useNavigate()
 
     const login = async (e) => {
@@ -16,14 +17,13 @@ const LoginForm = (props) => {
         const response = await Axios.post('http://localhost:8080/api/auth/login', { email: email, password: password })
 
         localStorage.setItem('token', response.data.token)
-        localStorage.setItem('username', response.data.username)
-        localStorage.setItem('userId', response.data.userId)
-        localStorage.setItem('isAdmin', response.data.isAdmin)
-        
+      
         console.log(response);
         props.setUser({
             ...response.data
         })
+        setIsLoggedIn(true)
+       
         navigate('/')
     }
 
@@ -48,6 +48,7 @@ const LoginForm = (props) => {
                     type="password"
                     id='password'
                     placeholder='password'
+                    
                     className='inp-title' />
 
                 <div id="btns-allign">

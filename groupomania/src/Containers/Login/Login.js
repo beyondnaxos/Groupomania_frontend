@@ -4,6 +4,9 @@ import LoginForm from '../../Components/LoginForm/LoginForm';
 import postLog from './Post.png'
 
 const Login = (props) => {
+
+    const setIsLoggedIn = props.setIsLoggedIn
+
     return (
         <>
             <div className='quote'>
@@ -13,7 +16,7 @@ const Login = (props) => {
             <img className='imgLog' src={postLog} alt="Logo" />
             <div className='grayLog'></div>
             <div className="mainLog">
-                <LoginForm setUser={props.setUser} />
+                <LoginForm setIsLoggedIn={setIsLoggedIn} setUser={props.setUser} />
             </div>
         </>
     )

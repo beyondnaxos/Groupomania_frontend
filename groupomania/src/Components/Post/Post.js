@@ -64,7 +64,8 @@ export default function Card(props) {
                     </div>
                 </div>
                 <div className='btn-container'>
-                    <button onClick={(e) => {post(e)}} className='send-btn'>Create</button>
+                    <button onClick={(e) => {post(e)}} className='send-btn HOVER'><span></span>
+		<text>Create</text></button>
                 </div>
             </form>
         </div>

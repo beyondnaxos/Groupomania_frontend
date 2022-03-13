@@ -34,8 +34,7 @@ export default function BasicModal(props) {
         const response = axios.delete(`http://localhost:8080/api/auth/users/${userId}`, config)
         console.log(response)
         localStorage.removeItem('token')
-        localStorage.removeItem('userId')
-        localStorage.removeItem('username')
+       
         window.location.reload()
 
     }
