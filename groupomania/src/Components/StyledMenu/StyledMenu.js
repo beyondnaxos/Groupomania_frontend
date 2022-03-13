@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import axios from 'axios';
-
+import './StyledMenu.css';
 
 
 const StyledMenu = styled((props) => (
@@ -25,6 +25,7 @@ const StyledMenu = styled((props) => (
     {...props}
   />
 ))(({ theme }) => ({
+
   '& .MuiPaper-root': {
     borderRadius: 6,
     marginTop: theme.spacing(1),
@@ -56,8 +57,8 @@ export default function CustomizedMenus(props) {
 
   const handleDeletePost = async (e) => {
     e.preventDefault()
-    const setId = props.setId
-    
+    const id = props.setId
+   
     // const userId = props.userId
     // console.log('last clg' + setId, userId)
     const config = {
@@ -66,11 +67,11 @@ export default function CustomizedMenus(props) {
       }
     }
 
-    const response = await axios.delete(`http://localhost:8080/api/tutorials/${setId}`, config)
+    const response = await axios.delete(`http://localhost:8080/api/tutorials/${id}`, config)
     console.log(response)
     props.setPost((oldState) => {
       const posts = [...oldState]
-      const index = posts.findIndex(post => post.id === response.data.tutorialId)
+      const index = posts.findIndex(post => post.id === id )
       posts.splice(index, 1)
       console.log('new state', posts)
       return posts
@@ -78,23 +79,6 @@ export default function CustomizedMenus(props) {
   
   
   }
-
-  
-
-  //     console.log('delete post')
-  //     console.log(props.token)
-  //     const setId = props.setId
-  //     const config = {
-  //         headers: {
-  //             'Authorization': `Bearer ${props.token}`
-  //         }
-  //     }
-  //     const response = await axios.delete(`http://localhost:8080/api/tutorials/${setId}`, {
-  //         id : setId
-
-  //     }, config)
-  //     console.log('delete post', response.data)
-  // }
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -107,9 +91,10 @@ export default function CustomizedMenus(props) {
   };
 
   return (
-    <div>
+    <div id='buttonColor'>
       <Button
         id="demo-customized-button"
+        
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}

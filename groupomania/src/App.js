@@ -10,15 +10,17 @@ import React, {useState} from 'react'
 function App() {
 
   const [user, setUser ] = useState()
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+  
 
   return (
     <Routes>
-    <Route path='/login' element={<Login setUser={setUser}/>}/>
+    <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}/>
     <Route path='/signup' element={<SignUp />}/>
-    <Route path='/' element={<Home user={user} />}/>
+    <Route path='/' element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} />}/>
     </Routes>
-  );
+  )
 }
 
 export default App;

@@ -10,7 +10,7 @@ export default function Card(props) {
     const [content, setContent] = useState('')
     const [selectedFile, setSelectedFile] = useState('')
 
-
+    
     const post = async (e) => {
         e.preventDefault()
         const setUser = props.setUser
@@ -22,7 +22,7 @@ export default function Card(props) {
         console.log(setUser)
         console.log(config)
         let form = new FormData();
-        form.append('image', selectedFile)
+        form.append('image', selectedFile )
         form.append('name', setUser)
         form.append('description', content)
         form.append('published', true)
@@ -30,6 +30,12 @@ export default function Card(props) {
         console.log(selectedFile)
         console.log(response.data)
         props.setPosts([...props.posts, response.data])
+        // this.setContent({
+        //     content: ''
+        // })
+        // this.setSelectedFile({
+        //     selectedFile: ''
+        // })
     }
 
     return (
@@ -44,20 +50,22 @@ export default function Card(props) {
                         className='inputPost' />
 
                     <div className='icon-form'>
-                        <MdImage className='icon' />
-                        <label htmlFor="file"></label>
                         <input
+                           className='inputfile' 
+                           name='file'
                             type="file"
                             id="file"
                             onChange={(e) => { setSelectedFile(e.target.files[0]) }}
                         />
+                        <label for="file"><MdImage className='iconUpload' /></label>
 
                         <MdAddLocationAlt className='icon' />
                         <MdOutlineAlternateEmail className='icon' />
                     </div>
                 </div>
                 <div className='btn-container'>
-                    <button onClick={(e) => {post(e)}} className='send-btn'>Create</button>
+                    <button onClick={(e) => {post(e)}} className='send-btn HOVER'><span></span>
+		<text>Create</text></button>
                 </div>
             </form>
         </div>
