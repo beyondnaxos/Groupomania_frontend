@@ -42,7 +42,7 @@ const Showcomments = (props) => {
                         <p className='comment-content'>{comData.text}</p>
                     </div>
                     <div className='comment-button-container'>
-                       { props.isAdmin || props.userId === comData.userId ? <button className='comment-button' onClick={handleDeleteComment}><DeleteIcon /></button> : null }
+                       { props.isAdmin === 'true' || props.userId === comData.userId ? <button className='comment-button' onClick={handleDeleteComment}><DeleteIcon /></button> : null }
 
                     </div>
                 </div>
