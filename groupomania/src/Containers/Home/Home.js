@@ -20,8 +20,9 @@ export default function Home(props) {
     const [posts, setPosts] = useState([])
     const user = localStorage.getItem('username')
     const token = localStorage.getItem('token')
-    const userId = localStorage.getItem('userId')
-    const isAdmin = localStorage.getItem('isAdmin')
+    const userId = parseInt(localStorage.getItem('userId'))
+    const isAdmin = (localStorage.getItem('isAdmin') === 'true')
+   
     
 
     
@@ -81,7 +82,7 @@ export default function Home(props) {
                                                 </div>
                                             </div>
                                             <div className='menu'>
-                                            { isAdmin === "true" || userId === data.userId ? <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={user} token={token} /> : null }
+                                            { isAdmin || userId === data.userId ? <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={user} token={token} /> : null }
                                             </div>
                                         </div>
                                         <div className='post-content-container'>
