@@ -29,6 +29,9 @@ export default function PositionedMenu(props) {
     localStorage.removeItem('token')
     localStorage.removeItem('username')
     localStorage.removeItem('id')
+    localStorage.removeItem('isAdmin')
+    localStorage.removeItem('userId')
+    localStorage.removeItem('isLoggedIn')
     window.location.replace('/')  
     }
 
