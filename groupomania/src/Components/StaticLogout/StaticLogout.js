@@ -12,7 +12,7 @@ export default function StaticLogout(props) {
     return (
     
             <ul className='staticProfil'>
-                <ParamsAccount setPosts={setPosts}    userId={userId} username={username} token={token}/>
+                <ParamsAccount setPosts={setPosts}   setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={username} token={token}/>
             </ul>
     
     )

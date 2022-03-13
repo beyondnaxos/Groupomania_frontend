@@ -24,7 +24,8 @@ export default function PositionedMenu(props) {
 
   const handleLogout = (e) => {
     e.preventDefault()
-
+    props.setIsLoggedIn(false)
+    console.log(props.setIsLoggedIn)
     localStorage.removeItem('token')
     localStorage.removeItem('username')
     localStorage.removeItem('id')
