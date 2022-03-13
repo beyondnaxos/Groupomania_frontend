@@ -18,11 +18,10 @@ TimeAgo.addDefaultLocale(en)
 export default function Home(props) {
     
     const [posts, setPosts] = useState([])
-    const [user, setUser] = useState(localStorage.getItem('username'))
-    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn'))
-    const [token, setToken] = useState(localStorage.getItem('token'))
-    const [userId, setUserId] = useState(localStorage.getItem('userId'))
-    const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin'))
+    const [user] = useState(localStorage.getItem('username'))
+    const [token] = useState(localStorage.getItem('token'))
+    const [userId] = useState(localStorage.getItem('userId'))
+    const [isAdmin] = useState(localStorage.getItem('isAdmin'))
     
 
     useEffect(() => {
@@ -65,7 +64,7 @@ export default function Home(props) {
 
                             {[...posts].reverse().map((data) => {
                                 console.log(data)
-                                console.log(props.user)
+                               
                                 return (
                                     <div className='post rounded' key={data.id}>
                                         <div className='headPost'>
@@ -120,7 +119,6 @@ export default function Home(props) {
                         </div>
                     </div>
                 </div>
-
             </>
         ) : (
             <Navigate to="/login" replace={true} />
