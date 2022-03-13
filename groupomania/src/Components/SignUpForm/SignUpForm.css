@@ -84,3 +84,23 @@ input:focus, textarea:focus, select:focus{
     color: rgb(68, 67, 67);
 
 }
+
+@media screen and (max-width: 700px) {
+
+    
+
+    .container-form {
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .container-form input {
+        font-size: 20px;
+    }
+    .container-form .log-btn {
+        font-size: 20px;
+    }
+    .container-form .log-btn-alt {
+        font-size: 20px;
+    }
+    
+}

@@ -22,7 +22,7 @@ export default function WorkersList(props) {
         }
         fetchData()
 
-    }, [])
+    }, [ token ])
 
 
     return (
@@ -31,7 +31,7 @@ export default function WorkersList(props) {
                     <div className="workers-container">
                     {workers.map(worker => {
                         return (
-                            <div className='worker-card'>
+                            <div className='worker-card' key={worker.id}>
                            
                                 <h3 className='worker-card-name'>{worker.username}</h3>
                                 { worker.isAdmin ?  

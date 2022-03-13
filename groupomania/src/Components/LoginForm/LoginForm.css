@@ -83,3 +83,24 @@ input:focus, textarea:focus, select:focus{
     
     
 }
+
+
+@media screen and (max-width: 700px) {
+
+    
+
+    .log-container-form {
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .log-container-form input {
+        font-size: 20px;
+    }
+    .log-container-form .log-btn {
+        font-size: 20px;
+    }
+    .log-container-form .log-btn-alt {
+        font-size: 20px;
+    }
+    
+}

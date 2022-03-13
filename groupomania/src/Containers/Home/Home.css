@@ -14,11 +14,12 @@
 }
 .container-cards {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
-    ;
+    justify-content: flex-start;
+    /* flex-wrap: wrap; */
+    
+    margin: 0;
     
 }
 
@@ -87,7 +88,7 @@ body::-webkit-scrollbar {
 }
 .profil-id  {
      font-size: 18px;
-     color: rgb(43, 43, 43);
+     color: #2b2b2b;
 }
 
 .profil-id-container p {
@@ -101,7 +102,8 @@ body::-webkit-scrollbar {
 /* static left  */
 
 .staticLeft{
-    background-color: rgb(39, 39, 39);
+    background-color: #1d304e;
+    /* background-color: rgb(39, 39, 39); */
     position: fixed;
     top: 0;
     left: 0;
@@ -116,7 +118,7 @@ body::-webkit-scrollbar {
 }
 
 .staticRight {
-    background-color: rgb(39, 39, 39);
+    background-color: #1d304e;
     position: fixed;
     top: 0;
     right: 0;
@@ -257,7 +259,7 @@ body::-webkit-scrollbar {
 }
     
 .post-content-container{
-    width: 90vw;
+    width: 80vw;
 }
 .headPost {
     display: inline-flex;
@@ -270,6 +272,7 @@ body::-webkit-scrollbar {
     margin: 50px 0 0 0px; 
     padding: 0;
 }
+
 
 .home-subTitle {
     margin: 0;

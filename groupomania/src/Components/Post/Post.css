@@ -3,15 +3,22 @@
     min-width: 730px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 10px;
-    min-height: 150px;
+    
+    /* min-height: 150px; */
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(255, 255, 255);
-    border-top: 5px solid rgba(0, 0, 0, 0.30);
-    transform: scale(0.9);
+    background-color: rgba(255, 255, 255);
+    border-top: 5px solid rgba(22, 20, 37, 0.7);
+    transform: scale(1);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+    margin: 50px 0 0 0;
+}
+
+.post:hover {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.9s;
+    border-top: 5px solid rgba(209, 81, 90, 1);
 }
 
 .post h2 {
@@ -51,12 +58,109 @@
     height: 100px;
     width: 100px;
     border-radius: 50px;
-    border: 3px solid rgb(44, 44, 44);
-    background: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s; */
+    border: 3px solid rgb(255, 254, 254);
+    background: #1d304e;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.send-btn:hover {
+    /* background: rgb(209, 81, 90); */
+    /* border: 3px solid #ffffff; */
+    color: #ffffff;
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s; */
+}
+
+/* test   */
+@keyframes shake {
+	25% {
+		transform: rotate(calc(var(--angle) * -1));
+	}
+
+	50% {
+		transform: rotate(var(--angle));
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
 }
 
 
+
+
+
+
+
+.HOVER {
+	--width: 100%;
+	--time: 0.7s;
+
+	position: relative;
+	/* display: inline-block; */
+	/* height: 1em; */
+	
+    /* padding: 1em; */
+
+	/* color: white; */
+	/* background: #222; */
+	overflow: hidden;
+}
+
+.HOVER text {
+	position: relative;
+	z-index: 5;
+	
+	transition: color var(--time);
+}
+
+.HOVER:hover text {
+    color: #ffffff;
+}
+
+.HOVER span {
+	position: absolute;
+	display: block;
+	content: "";
+	z-index: 0;
+	width: 0;
+	height: 0;
+	
+	border-radius: 100%;
+	background: #d1515a;
+	
+	transform: translate(-50%, -50%);
+	transition: width var(--time), padding-top var(--time);
+}
+
+.HOVER:hover span {
+	width: calc(var(--width) * 2.25);
+	padding-top: calc(var(--width) * 2.25);
+}
+
+.HOVER.FLASH:hover text {
+	color: white;
+}
+
+.HOVER.FLASH span {
+	background: #ff3b3b;
+}
+
+.animated {
+	--angle: 5deg;
+	animation: shake 0.3s;
+}
+
+.link{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	
+	font-size: 1rem;
+}
+/* test */
 .inputPost {
     width: 500px;
     height: 60px;
@@ -111,16 +215,21 @@
     color: rgb(22, 22, 22);
     background-color: rgb(255, 255, 255);
     display: inline-block;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+    border-radius: 10px;
+    height: 40px;
 }
 
 .inputfile + label:hover {
     
+    height: 40px;
     color: rgb(255, 255, 255);
+    border: none;
     background-color: rgb(56, 56, 56);
-
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
     /* display: inline-block; */
     border-radius: 10px;
-    height: 90%;
+    
 
 }
 
@@ -130,12 +239,13 @@
 
 @media screen and (max-width: 700px ) {
     .post {
-        min-width: 100vw;
-        margin: 0;
+        min-width: 90vw;
+        margin: 40px 0 0  0;
         flex-direction: column;
         max-height: inherit ;
         min-height: inherit;
     }
+    
     .post-form {
         max-width: 100%;
         display: flex;

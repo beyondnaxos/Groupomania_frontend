@@ -16,7 +16,7 @@ import WorkersList from '../../Components/WorkersList/WorkersList'
 TimeAgo.addDefaultLocale(en)
 
 export default function Home(props) {
-
+    
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export default function Home(props) {
 
     return (
 
-        props.user  ? (
+        props.isLoggedIn  ? (
 
             <>
                 <div className='mainBlock'>
@@ -96,7 +96,7 @@ export default function Home(props) {
 
                                             {[...data.comments]?.reverse().map((com) => {
                                                 return (
-                                                    <Showcomments token={ props.user.token} user={props.user} comData={com} postId={data.id} setPost={setPosts} />
+                                                    <Showcomments key={data.id} token={ props.user.token} user={props.user} comData={com} postId={data.id} setPost={setPosts} />
 
                                                 )
                                             })}
