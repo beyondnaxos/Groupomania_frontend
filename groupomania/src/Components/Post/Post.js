@@ -31,6 +31,7 @@ export default function Card(props) {
         console.log(response.data)
         props.setPosts([...props.posts, response.data])
         setContent('')
+        setSelectedFile('')
 
 
     }
@@ -53,7 +54,6 @@ export default function Card(props) {
                             className='inputfile'
                             name='file'
                             type="file"
-                            value={selectedFile}
                             id="file"
                             onChange={(e) => { setSelectedFile(e.target.files[0]) }}
                         />

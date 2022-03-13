@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Home.css'
+import './Home.scss'
 import Showcomments from '../../Components/ShowComments/ShowComments'
 import LikeButton from '../../Components/LikeButton/LikeButton'
 import Post from '../../Components/Post/Post'
@@ -67,7 +67,7 @@ export default function Home(props) {
                                 console.log(data)
                                
                                 return (
-                                    <div className='post rounded' key={data.id}>
+                                    <div className='post rounded' key={data.id} >
                                         <div className='headPost'>
                                             <div className='main-id-container'>
                                                 {/* <div className='profil-photo-container'> */}
