@@ -2,13 +2,9 @@ import React, { useState } from 'react';
 import './CommentPost.css';
 import axios from 'axios';
 
-
-
-const Commentpost = (props) => {
-
+const NewComment = (props) => {
 
     const [content, setContent] = useState('')
-
 
     const handleSend = async (e) => {
         e.preventDefault()
@@ -54,4 +50,4 @@ const Commentpost = (props) => {
 }
 
 
-export default Commentpost;
+export default NewComment;

@@ -1,5 +1,5 @@
 import React from 'react'
-import ParamsAccount from '../../Components/ParamsAccount/ParamsAccount'
+import ModalLogout from '../ModalLogout/ModalLogout'
 import './StaticLogout.css'
 
 export default function StaticLogout(props) {
@@ -12,7 +12,7 @@ export default function StaticLogout(props) {
     return (
     
             <ul className='staticProfil'>
-                <ParamsAccount setPosts={setPosts}   setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={username} token={token}/>
+                <ModalLogout setPosts={setPosts}   setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={username} token={token}/>
             </ul>
     
     )

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ProfilModal from '../ProfilModal/ProfilModal';
+import ModalDeleteAccount from '../ModalDeleteAccount/ModalDeleteAccount';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import './ParamsAccount.css';
@@ -64,7 +64,7 @@ export default function PositionedMenu(props) {
           horizontal: 'left',
         }}
       >
-        <MenuItem ><ProfilModal setPosts={setPosts}  userId={userId} username={username} token={token}/></MenuItem>
+        <MenuItem ><ModalDeleteAccount setPosts={setPosts}  userId={userId} username={username} token={token}/></MenuItem>
         <MenuItem id='logout' onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>

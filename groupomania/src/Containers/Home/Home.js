@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
-import Showcomments from '../../Components/showComments/showComments'
+import Showcomments from '../../Components/ShowComments/ShowComments'
 import LikeButton from '../../Components/LikeButton/LikeButton'
 import Post from '../../Components/Post/Post'
-import StaticLogout from '../../Components/StaticLogout/StaticLogout'
-import StyledMenu from '../../Components/StyledMenu/StyledMenu'
+import Dashboard from '../../Components/Dashboard/Dashboard'
+import DeletePostMenu from '../../Components/DeletePostMenu/DeletePostMenu'
 import { Navigate } from "react-router-dom"
-import Commentpost from '../../Components/CommentPost/CommentPost'
+import NewComment from '../../Components/NewComment/NewComment'
 import TimeAgo from 'javascript-time-ago'
 import ReactTimeAgo from 'react-time-ago'
 import logo from './icon-left-font-monochrome-white.svg'
@@ -24,10 +24,6 @@ export default function Home(props) {
     const userId = parseInt(localStorage.getItem('userId'))
     const isAdmin = (localStorage.getItem('isAdmin') === 'true')
    
-    
-
-    
-
     useEffect(() => {
         async function fetchData() {
             const config = {
@@ -84,7 +80,7 @@ export default function Home(props) {
                                                 </div>
                                             </div>
                                             <div className='menu'>
-                                            { isAdmin || userId === data.userId ? <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={user} token={token} /> : null }
+                                            { isAdmin || userId === data.userId ? <DeletePostMenu setPost={setPosts} setId={data.id} userId={data.userId} username={user} token={token} /> : null }
                                             </div>
                                         </div>
                                         <div className='post-content-container'>
@@ -96,7 +92,7 @@ export default function Home(props) {
                                         
                                         <div className='bigger-container'>
                                             <div className='like-container'>
-                                                <Commentpost setPost={setPosts} setUser={user} setId={data.id} token={token} className='allign' />
+                                                <NewComment setPost={setPosts} setUser={user} setId={data.id} token={token} className='allign' />
                                                 <LikeButton />
                                             </div>
                                         </div>
@@ -119,7 +115,7 @@ export default function Home(props) {
                     </div>
                     <div className='staticRight'>
                         <div className='menuRight'>
-                            <StaticLogout setPosts={setPosts} setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={user} token={token} />
+                            <Dashboard setPosts={setPosts} setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={user} token={token} />
                             <AdminMsg/>
                             <MusicPlayer className='player' />
                         </div>
