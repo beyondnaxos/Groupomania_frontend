@@ -4,8 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-Clone this repo and run `npm install` to install the dependencies.
-### 'npm install'
+Clone this repo and run `cd groupomania` then `npm install` to install the dependencies.
+
+### `cd groupomania`
+### `npm install`
 
 In the project directory, you can run:
 
