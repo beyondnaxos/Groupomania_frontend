@@ -12,7 +12,8 @@ import ReactTimeAgo from 'react-time-ago'
 import logo from './icon-left-font-monochrome-white.svg'
 import en from 'javascript-time-ago/locale/en.json'
 import WorkersList from '../../Components/WorkersList/WorkersList'
-
+import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer'
+import AdminMsg from '../../Components/AdminMsg/AdminMsg'
 TimeAgo.addDefaultLocale(en)
 
 export default function Home(props) {
@@ -42,6 +43,7 @@ export default function Home(props) {
         }
         fetchData()
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     console.log(posts);
@@ -105,7 +107,6 @@ export default function Home(props) {
                                             {[...data.comments]?.reverse().map((com) => {
                                                 return (
                                                     <Showcomments key={data.id} token={ token} isAdmin={isAdmin} userId={userId} user={props.user} comData={com} postId={data.id} setPost={setPosts} />
-
                                                 )
                                             })}
                                         </div>
@@ -119,6 +120,8 @@ export default function Home(props) {
                     <div className='staticRight'>
                         <div className='menuRight'>
                             <StaticLogout setPosts={setPosts} setIsLoggedIn={props.setIsLoggedIn} userId={userId} username={user} token={token} />
+                            <AdminMsg/>
+                            <MusicPlayer className='player' />
                         </div>
                     </div>
                 </div>

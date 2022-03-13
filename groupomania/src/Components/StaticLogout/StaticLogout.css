@@ -3,7 +3,9 @@
     flex-direction: row;
     padding: 0;
     justify-content: flex-end;
-    padding-right: 30px;
+    justify-self: flex-end;
+    width: 80%;
+    
 }
 
 .btnStatic {
