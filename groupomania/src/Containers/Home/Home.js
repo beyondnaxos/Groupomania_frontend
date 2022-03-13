@@ -18,10 +18,12 @@ TimeAgo.addDefaultLocale(en)
 export default function Home(props) {
     
     const [posts, setPosts] = useState([])
-    const [user] = useState(localStorage.getItem('username'))
-    const [token] = useState(localStorage.getItem('token'))
-    const [userId] = useState(localStorage.getItem('userId'))
-    const [isAdmin] = useState(localStorage.getItem('isAdmin'))
+    const user = localStorage.getItem('username')
+    const token = localStorage.getItem('token')
+    const userId = localStorage.getItem('userId')
+    const isAdmin = localStorage.getItem('isAdmin')
+    
+
     
 
     useEffect(() => {
@@ -79,7 +81,7 @@ export default function Home(props) {
                                                 </div>
                                             </div>
                                             <div className='menu'>
-                                            { isAdmin || userId === data.userId ? <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={user} token={token} /> : null }
+                                            { isAdmin === "true" || userId === data.userId ? <StyledMenu setPost={setPosts} setId={data.id} userId={data.userId} username={user} token={token} /> : null }
                                             </div>
                                         </div>
                                         <div className='post-content-container'>
@@ -101,7 +103,7 @@ export default function Home(props) {
 
                                             {[...data.comments]?.reverse().map((com) => {
                                                 return (
-                                                    <Showcomments key={data.id} token={ token} isAdmin={isAdmin} user={props.user} comData={com} postId={data.id} setPost={setPosts} />
+                                                    <Showcomments key={data.id} token={ token} isAdmin={isAdmin} userId={userId} user={props.user} comData={com} postId={data.id} setPost={setPosts} />
 
                                                 )
                                             })}
