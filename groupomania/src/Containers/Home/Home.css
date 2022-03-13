@@ -149,6 +149,7 @@ body::-webkit-scrollbar {
     justify-content: flex-start;
     align-items: flex-start;
     width: 777px;
+    padding-bottom: 60px;
     
     
     
