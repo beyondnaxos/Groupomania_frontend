@@ -88,12 +88,6 @@
 	}
 }
 
-
-
-
-
-
-
 .HOVER {
 	--width: 100%;
 	--time: 0.7s;
@@ -233,9 +227,7 @@
 
 }
 
-.iconUpload:hover{
-    border: 1px solid white;
-}
+
 
 @media screen and (max-width: 700px ) {
     .post {
@@ -278,8 +270,6 @@
         justify-content: center;
     }
 
-    
-    
     .icon {
         width: 30%;
         margin-left: 20px;
@@ -288,9 +278,12 @@
         width: 30%;
     }
     .inputfile {
-        width: 100%;
+        width: 40%;
     }
     .inputfile + label {
         width: 40%;
     }
+
+    
+    
 }

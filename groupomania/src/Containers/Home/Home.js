@@ -15,6 +15,7 @@ import WorkersList from '../../Components/WorkersList/WorkersList'
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer'
 import AdminMsg from '../../Components/AdminMsg/AdminMsg'
 import BoxInfo from '../../Components/BoxInfo/BoxInfo'
+
 TimeAgo.addDefaultLocale(en)
 
 export default function Home(props) {
@@ -53,7 +54,7 @@ export default function Home(props) {
                 <div className='mainBlock'>
                     <div className='staticLeft'><img src={logo} alt="groupomania logo" className='logo' />
                         <WorkersList token={token} />
-
+                        
                     </div>
                     <div className='centerBlock'>
 

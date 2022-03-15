@@ -61,7 +61,7 @@ export default function Card(props) {
                             onChange={(e) => { setSelectedFile(e.target.files[0]) }}
                             aria-label='file-input'
                         />
-                        <label for="file" aria-label="delete-com"><MdImage aria-label="delete-com-icon" className='iconUpload' /></label>
+                        <label for="file" aria-label="delete-com" className='labelUp'><MdImage aria-label="delete-com-icon" className='iconUpload' /></label>
 
                         <MdAddLocationAlt className='icon' />
                         <MdOutlineAlternateEmail className='icon' />

@@ -5,6 +5,8 @@ import DeleteIcon from '@mui/icons-material/Delete'
 
 const Showcomments = (props) => {
     const comData = props.comData
+    const isAdmin = props.isAdmin
+    const userId = props.userId
     const handleDeleteComment = async (e) => {
     
         e.preventDefault()
@@ -42,7 +44,7 @@ const Showcomments = (props) => {
                         <p className='comment-content'>{comData.text}</p>
                     </div>
                     <div className='comment-button-container'>
-                       { props.isAdmin === 'true' || props.userId === comData.userId ? <button className='comment-button' onClick={handleDeleteComment} aria-label="Left Align"><DeleteIcon /></button> : null }
+                       { isAdmin || userId === comData.userId ? <button className='comment-button' onClick={handleDeleteComment} aria-label="Left Align"><DeleteIcon /></button> : null }
 
                     </div>
                 </div>
